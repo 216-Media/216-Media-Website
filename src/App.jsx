@@ -1,4 +1,8 @@
 import { 
+  useState 
+} from 'react';
+
+import { 
   Box 
 } from '@mui/material';
 
@@ -8,12 +12,24 @@ from '@/common/components/NavigationBar';
 
 import '@/font.scss';
 
+
+import ThemeProvider from '@/common/theme/ThemeProvider';
+
+import Hero from './common/components/Hero';
+
+
+
 function App() {
 
+  const [theme, setTheme] = useState(false);
+
   return (
-    <Box style={root}>
-      <NavigationBar />
-    </Box>
+    <ThemeProvider theme={theme}>
+      <Box>
+        <NavigationBar theming={theme} setTheme={setTheme}/>
+        <Hero />
+      </Box>
+    </ThemeProvider>
   )
 }
 

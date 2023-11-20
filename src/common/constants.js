@@ -6,3 +6,17 @@ export const Colors = {
     Lemon: '#F8EF22',
     HollywoodCerise: '#EB058C'
 }
+
+export const EventType = {
+    Keydown: 'keydown',
+    Tab: 'Tab',
+    Shift: 'Shift'
+}
+
+export const NavBarItems = [
+    'ABOUT US',
+    'OUR SERVICES',
+    'OUR WORK',
+    'OUR CLIENTS',
+    '216 HEALTH'
+]

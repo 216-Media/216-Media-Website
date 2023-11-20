@@ -11,23 +11,16 @@ import {
     createTheme,
 } from '@mui/material/styles';
 
-import { CssBaseline } from "node_modules/@mui/material/index";
+import { CssBaseline } from "@mui/material";
 
 function ThemeProvider({
-    children
+    children,
+    theme
 }){
-    const [theme, setTheme] = useState(false);
-
     const darkTheme = createTheme({
         palette: palette(theme),
         typography: typography()
     })
-
-    const handleThemeChange = () => {
-        setTheme(
-            !theme
-        )
-    }
 
     return(
         <MuiThemeProvider

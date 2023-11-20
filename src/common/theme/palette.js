@@ -1,7 +1,17 @@
+import { Colors } from "@/common/constants";
+
 export const palette = (mode) => {
     const themeBackground = mode ? 'dark' : 'light';
 
     return {
         mode: themeBackground,
+        background: {
+            default: mode ? Colors.AZTEC : Colors.White
+        },
+        primary: {
+            main: Colors.HavelockBlue,
+            contrastText: Colors.White,
+            dark: Colors.HavelockBlue
+        }
     }
 }
