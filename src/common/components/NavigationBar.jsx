@@ -2,12 +2,15 @@ import {
   Box,
   ListItem,
   List,
-  ListItemButton,
   ListItemText,
   Divider,
   styled,
   Drawer
 } from '@mui/material';
+
+import 
+  Switch
+from '@mui/joy/Switch'
 
 import 
   React,
@@ -40,10 +43,77 @@ import
   CustomIOSwitch 
 from '@/common/components/Switcher';
 
+import DarkMode from '@mui/icons-material/DarkMode';
 import { 
   EventType, NavBarItems 
 } from '@/common/constants';
 
+
+const CloseBox = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  marginInline: '10px'
+}))
+
+const NavbarLink = styled(Typography)(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  fontSize: '13px',
+  gap: theme.spacing(3),
+  [theme.breakpoints.down('md')]: {
+    display: 'none'
+  }
+}))
+
+const HamIcon = styled(MenuIcon)(({ theme }) => ({
+  cursor: 'pointer',
+  display: 'none',
+  marginRight: theme.spacing(2),
+  marginLeft: '13px',
+  [theme.breakpoints.down('md')]: {
+    display: 'block'
+  }
+}))
+
+const NavbarContainer = styled(Container)(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  padding: theme.spacing(2),
+  [theme.breakpoints.down('md')]: {
+    padding: theme.spacing(2)
+  }
+}))
+
+const Logo = styled('img')(({ theme }) => ({
+  cursor: 'pointer'
+}))
+
+const NavbarLinkBox = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  gap: theme.spacing(5),
+  marginRight: '14px',
+  [theme.breakpoints.down('md')]: {
+    display: 'none'
+  }
+}))
+
+const ActionBox = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  marginLeft: '20px',
+  [theme.breakpoints.down('md')]: {
+    display: 'none'
+  }
+}))
+
+const NavbarLeftBox = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center'
+}))
 
 function NavigationBar({
   setTheme,
@@ -94,71 +164,6 @@ function NavigationBar({
     </Box>
   )
   
-  const CloseBox = styled(Box)(({ theme }) => ({
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    marginInline: '10px'
-  }))
-
-  const NavbarLink = styled(Typography)(({ theme }) => ({
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    fontSize: '13px',
-    gap: theme.spacing(3),
-    [theme.breakpoints.down('md')]: {
-      display: 'none'
-    }
-  }))
-
-  const HamIcon = styled(MenuIcon)(({ theme }) => ({
-    cursor: 'pointer',
-    display: 'none',
-    marginRight: theme.spacing(2),
-    marginLeft: '13px',
-    [theme.breakpoints.down('md')]: {
-      display: 'block'
-    }
-  }))
-
-  const NavbarContainer = styled(Container)(({ theme }) => ({
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    padding: theme.spacing(2),
-    [theme.breakpoints.down('md')]: {
-      padding: theme.spacing(2)
-    }
-  }))
-
-  const Logo = styled('img')(({ theme }) => ({
-    cursor: 'pointer'
-  }))
-
-  const NavbarLinkBox = styled(Box)(({ theme }) => ({
-    display: 'flex',
-    alignItems: 'center',
-    gap: theme.spacing(5),
-    marginRight: '14px',
-    [theme.breakpoints.down('md')]: {
-      display: 'none'
-    }
-  }))
-
-  const ActionBox = styled(Box)(({ theme }) => ({
-    display: 'flex',
-    alignItems: 'center',
-    marginLeft: '20px',
-    [theme.breakpoints.down('md')]: {
-      display: 'none'
-    }
-  }))
-
-  const NavbarLeftBox = styled(Box)(({ theme }) => ({
-    display: 'flex',
-    alignItems: 'center'
-  }))
 
   
   const handleThemeChange = () => {
@@ -178,7 +183,7 @@ function NavigationBar({
         </NavbarLinkBox>
         <NavbarLeftBox>
        
-          <CustomIOSwitch />
+            <CustomIOSwitch />
           
           <ActionBox>
             <NavbarLink>216 HEALTH</NavbarLink>
