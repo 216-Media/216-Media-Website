@@ -13,10 +13,19 @@ from '@/common/components/NavigationBar';
 import '@/font.scss';
 
 
-import ThemeProvider from '@/common/theme/ThemeProvider';
+import 
+  ThemeProvider 
+from '@/common/theme/ThemeProvider';
 
-import Hero from './common/components/Hero';
+import 
+  Hero 
+from '@/ui/Hero';
 
+import 
+  AboutUs 
+from '@/ui/AboutUs';
+
+import Services from '@/ui/Services';
 
 
 function App() {
@@ -28,6 +37,8 @@ function App() {
       <Box>
         <NavigationBar theming={theme} setTheme={setTheme}/>
         <Hero />
+        <AboutUs />
+        <Services />
       </Box>
     </ThemeProvider>
   )

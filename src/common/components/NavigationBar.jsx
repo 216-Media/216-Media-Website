@@ -91,7 +91,6 @@ function NavigationBar({
           <Logo width={30} src={healthImg} alt='216-health' />
         </ActionBox>
       </List>
-      
     </Box>
   )
   
@@ -123,14 +122,13 @@ function NavigationBar({
     }
   }))
 
-
   const NavbarContainer = styled(Container)(({ theme }) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    padding: theme.spacing(5),
+    padding: theme.spacing(2),
     [theme.breakpoints.down('md')]: {
-      padding: theme.spacing(5)
+      padding: theme.spacing(2)
     }
   }))
 
@@ -195,7 +193,6 @@ function NavigationBar({
             {list('top')}
           </Drawer>
         </NavbarLeftBox>
-
       </NavbarLeftBox>
     </NavbarContainer>
   )
