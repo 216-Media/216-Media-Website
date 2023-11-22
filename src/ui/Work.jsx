@@ -24,13 +24,20 @@ import {
     Notepads
 } from '@/assets/images';
 
+import
+    PhotoAlbum
+from 'react-photo-album';
 
+import
+    photoGridGenerator
+from '@/common/helpers/collageGen'
 
 const Saja = [
-    Coida,
-    Saja_logo,
+    
+    Saja_bagpack,
     RMA_brand_van,
-    Saja_bagpack
+    Saja_logo,
+    Coida,
 ];
 
 const Sena = [
@@ -67,19 +74,23 @@ const imagesCollages = [
     ],
   ];
   
-
-const WorkBanner = styled(Box)(({ theme }) => ({
+const ImageContainer = styled(Box)(({ theme }) => ({
 
 }))
 
-const WorkCollageContainer = styled(Grid)(({ theme }) => ({
-    
-}))
+
 function Work(){
     return (
+        <ImageContainer>
+            <PhotoAlbum 
+                layout="rows"
+                spacing={2}
+                photos={photoGridGenerator}
+            />
+        </ImageContainer>
        
-            <ImageCollageGrid images={imagesCollages}/>
-        
+
+        // <ImageCollageGrid images={imagesCollages}/>
     )
 }
 

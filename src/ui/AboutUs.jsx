@@ -17,18 +17,32 @@ import
     KeyboardArrowDownIcon 
 from '@mui/icons-material/KeyboardArrowDown';
 
-const animateDownArrow = `
-@keyframes pulse {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0)
+import
+    Fade
+from '@mui/material/Fade';
+
+import {
+    keyframes
+} from '@emotion/react'
+
+const bounceArrowDown = keyframes`
+    from, 20%, 53%, 80%, to {
+        transform: translate3d(0,0,0);
     }
-    40% {
-        transform: translateY(8px)
+    40%, 43% {
+        transform: translate3d(0, -4px, 0);
     }
-    60% {
-        transform: translateY(6px)
+
+    70% {
+        transform: translate3d(0, -5px, 0);
     }
-}`;
+
+    90% {
+        transform: translate3d(0,-2px,0);
+    }
+`;
+
+const BouncingImg = styled('img')
 
 const AboutContainer = styled(Container)(({ theme }) => ({
     display: 'flex',
@@ -47,7 +61,7 @@ const Title = styled(Typography)(({ theme }) => ({
     color: `${Colors.AZTEC}`,
     fontWeight: '800',
     fontSize: '26px',
-    marginRight: '10px'
+    marginRight: '2px'
 }));
 
 const Description = styled(Typography)(({ theme }) => ({
@@ -66,18 +80,7 @@ const TitleContainer = styled(Box)(({ theme }) => ({
 const DownArrow = styled(KeyboardArrowDownIcon)(({ theme }) => ({
     width: '35px',
     height: '35px',
-    animation: `$pulse 1.8s infinite` ,
-    '@keyframes pulse': {
-        '0%, 20%, 50%, 80%, 100%': {
-            transform: 'translateY(0)',
-        },
-        '40%': {
-            transform: 'translateY(8px)',
-        },
-        '60%': {
-            transform: 'translateY(6px)',
-        },
-    }
+    animation: `${bounceArrowDown} 1.8s ease infinite`
 }))
 
 function AboutUs(){
