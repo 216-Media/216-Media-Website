@@ -22,7 +22,13 @@ import
     CustomButton 
 from '@/common/components/CustomButton';
 
-import { Fragment } from 'react';
+import { 
+    Fragment 
+} from 'react';
+
+import 
+    Typewriter 
+from 'typewriter-effect';
 
 
 const ServiceContainer = styled(Box)(({ theme }) => ({
@@ -31,7 +37,7 @@ const ServiceContainer = styled(Box)(({ theme }) => ({
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
     width: '100%',
-    padding: theme.spacing(30, 0, 20, 0),
+    padding: theme.spacing(30, 0, 8, 0),
 }))
 
 const TitleContainer = styled(Box)(({ theme }) => ({
@@ -45,12 +51,14 @@ const Title = styled(Typography)(({ theme }) => ({
     color: `${Colors.AZTEC}`,
     fontSize: '26px',
     fontWeight: 'bold',
-    marginTop: theme.spacing(13)
+    marginBlock: theme.spacing(3)
 }))
 
-const HorizontalLine = styled(HorizontalRuleIcon)(({ theme }) => ({
-    marginBlock: theme.spacing(2),
-    width: '90px'
+const TypeWriterComponent = styled(Typography)(({ theme }) => ({
+    marginBottom: theme.spacing(3),
+    fontWeight: '500',
+    fontSize: '20px',
+    color: `${Colors.AZTEC}`
 }))
 
 function Services(){
@@ -62,7 +70,22 @@ function Services(){
                     <Title>
                         The great services we offer are
                     </Title>
-                <HorizontalLine />
+                <TypeWriterComponent>
+                    <Typewriter 
+                        options={{ 
+                            strings: [
+                                'Advertising', 
+                                'Design',
+                                'Digital Marketing',
+                                'Branding',
+                                'Trend Insight Strategy'
+                            ],
+                            autoStart: true,
+                            loop: true
+                        }}
+                    />
+                </TypeWriterComponent>
+                
                 <CustomButton buttonText={'LEARN MORE'}/>
                 </TitleContainer>
             </ServiceContainer>

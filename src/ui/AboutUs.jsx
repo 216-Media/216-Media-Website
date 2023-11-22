@@ -18,7 +18,7 @@ import
 from '@mui/icons-material/KeyboardArrowDown';
 
 const animateDownArrow = `
-@keyframes arrowAnimation {
+@keyframes pulse {
     0%, 20%, 50%, 80%, 100% {
         transform: translateY(0)
     }
@@ -66,7 +66,18 @@ const TitleContainer = styled(Box)(({ theme }) => ({
 const DownArrow = styled(KeyboardArrowDownIcon)(({ theme }) => ({
     width: '35px',
     height: '35px',
-    animation: `${animateDownArrow} 1.8s infinite` 
+    animation: `$pulse 1.8s infinite` ,
+    '@keyframes pulse': {
+        '0%, 20%, 50%, 80%, 100%': {
+            transform: 'translateY(0)',
+        },
+        '40%': {
+            transform: 'translateY(8px)',
+        },
+        '60%': {
+            transform: 'translateY(6px)',
+        },
+    }
 }))
 
 function AboutUs(){
