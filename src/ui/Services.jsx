@@ -2,8 +2,6 @@ import {
     styled,
     Box,
     Typography,
-    Divider,
-    Container
 } from '@mui/material';
 
 import
@@ -13,10 +11,6 @@ from '@/assets/icons/service-patterns.png';
 import { 
     Colors 
 } from '@/common/constants';
-
-import 
-    HorizontalRuleIcon 
-from '@mui/icons-material/HorizontalRule';
 
 import 
     CustomButton 
@@ -37,7 +31,6 @@ const ServiceContainer = styled(Box)(({ theme }) => ({
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
     width: '100%',
-    
     padding: theme.spacing(30, 0, 8, 0),
     maxWidth: '1700px',
     margin: '0 auto',

@@ -21,7 +21,8 @@ import {
     ROA_flags,
     SRS_logo,
     Website_mockup,
-    Notepads
+    Notepads,
+    Banner
 } from '@/assets/images';
 
 import
@@ -31,41 +32,25 @@ from 'react-photo-album';
 import { 
     generatePhotoGrid 
 }from '@/common/helpers/collageGen'
-import { Colors } from '@/common/constants';
 
-const Saja = [
-    
-    Saja_bagpack,
-    RMA_brand_van,
-    Saja_logo,
-    Coida,
-];
+import { 
+    Colors 
+} from '@/common/constants';
+import { Fragment } from 'react';
 
-const Sena = [
-    Sena_brand_bottle,
-    Sena_bottle,
-    Sena_work_items,
-];
-
-const ROA = [
-    ROA_flags,
-    ROA_brand_pen,
-    ROA_business_card,
-    
-];
-
-const SRS = [
-    Website_mockup,
-    Notepads,
-    SRS_logo
-]
 
 
   
 const ImageContainer = styled(Box)(({ theme }) => ({
     display: 'grid',
     gridTemplateColumns: 'repeat(2, 1fr)',
+}))
 
+const BannerImg = styled('img')(({ theme }) => ({
+    width: '100%',
+    height: '40px',
+    objectFit: 'cover',
+    marginBottom: '-7px'
 }))
 
 const sajaClient = [
@@ -127,72 +112,76 @@ const OverlayText = styled(Typography)({
 
 function Work(){
     return (
-        <ImageContainer>
-            <ClientContainer>
-                <PhotoAlbum 
-                    layout="columns"
-                    columns={2}
-                    spacing={2}
-                    photos={generatePhotoGrid(sajaClient)}
-                />
-                <Overlay className="overlay">
-                    <OverlayText
-                        variant="h6"
-                     >
-                        Saja Client
-                    </OverlayText>
-                </Overlay>
-            </ClientContainer>
+        <Fragment>
+            <BannerImg src={Banner}/>
+            <ImageContainer>
+                <ClientContainer>
+                    <PhotoAlbum 
+                        layout="columns"
+                        columns={2}
+                        spacing={2}
+                        photos={generatePhotoGrid(sajaClient)}
+                    />
+                    <Overlay className="overlay">
+                        <OverlayText
+                            variant="h6"
+                        >
+                            Saja Client
+                        </OverlayText>
+                    </Overlay>
+                </ClientContainer>
+                
+                <ClientContainer>
+                    <PhotoAlbum 
+                        layout="columns"
+                        spacing={2}
+                        columns={2}
+                        photos={generatePhotoGrid(senaClient)}
+                    />
+                    <Overlay className="overlay">
+                        <OverlayText
+                            variant="h6"
+                        >
+                            Sena Client
+                        </OverlayText>
+                    </Overlay>
+                </ClientContainer>
             
-            <ClientContainer>
-                <PhotoAlbum 
-                    layout="columns"
-                    spacing={2}
-                    columns={2}
-                    photos={generatePhotoGrid(senaClient)}
-                />
-                <Overlay className="overlay">
-                    <OverlayText
-                        variant="h6"
-                    >
-                        Sena Client
-                    </OverlayText>
-                </Overlay>
-            </ClientContainer>
-           
-            <ClientContainer>
-                <PhotoAlbum 
-                    layout="masonry"
-                    columns={2}
-                    spacing={2}
-                    photos={generatePhotoGrid(roaClient)}
-                />
-                <Overlay className="overlay">
-                    <OverlayText
-                        variant="h6"
-                    >
-                        ROA Client
-                    </OverlayText>
-                </Overlay>
-            </ClientContainer>
-            
-            <ClientContainer>
-                <PhotoAlbum 
-                    layout="masonry"
-                    spacing={2}
-                    columns={2}
-                    photos={generatePhotoGrid(SRSClient)}
-                />
-                <Overlay className="overlay">
-                    <OverlayText
-                        variant="h6"
-                    >
-                        Structured Risk Solutions
-                    </OverlayText>
-                </Overlay>
-            </ClientContainer>
-            
-        </ImageContainer>
+                <ClientContainer>
+                    <PhotoAlbum 
+                        layout="masonry"
+                        columns={2}
+                        spacing={2}
+                        photos={generatePhotoGrid(roaClient)}
+                    />
+                    <Overlay className="overlay">
+                        <OverlayText
+                            variant="h6"
+                        >
+                            ROA Client
+                        </OverlayText>
+                    </Overlay>
+                </ClientContainer>
+                
+                <ClientContainer>
+                    <PhotoAlbum 
+                        layout="masonry"
+                        spacing={2}
+                        columns={2}
+                        photos={generatePhotoGrid(SRSClient)}
+                    />
+                    <Overlay className="overlay">
+                        <OverlayText
+                            variant="h6"
+                        >
+                            Structured Risk Solutions
+                        </OverlayText>
+                    </Overlay>
+                </ClientContainer>
+                
+            </ImageContainer>
+        </Fragment>
+        
     )
 }
 

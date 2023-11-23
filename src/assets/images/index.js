@@ -21,6 +21,7 @@ import TeamMemberPattern1 from '@/assets/images/team-member-pattern1.png';
 import TeamMemberPattern2 from '@/assets/images/team-member-pattern2.png';
 import TeamMemberPattern3 from '@/assets/images/team-member-pattern3.png';
 import TeamMemberPattern4 from '@/assets/images/team-member-pattern4.png';
+import Banner from '@/assets/images/banner.png'
 
 export {
     RMA_brand_car,
@@ -45,5 +46,6 @@ export {
     TeamMemberPattern1,
     TeamMemberPattern2,
     TeamMemberPattern3,
-    TeamMemberPattern4
+    TeamMemberPattern4,
+    Banner
 }
