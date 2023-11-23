@@ -95,3 +95,30 @@ export const CarouselResponsive = {
         items: 2
     }
 }
+
+export const socialIcons = [
+    {
+        link: '216 Media',
+        icon: LanguageIcon
+    },
+    {
+        link: '00115348400',
+        icon: CallIcon
+    },
+    {
+        link: '216 Media',
+        icon: FacebookOutlinedIcon
+    },
+    {
+        link: '@twoonesix_media',
+        icon: InstagramIcon
+    },
+    {
+        link: '@twoonesix_media',
+        icon: TwitterIcon
+    },
+    {
+        link: '216Media-EverythingMedia&Marketing',
+        icon: CopyrightIcon
+    }
+]

@@ -29,6 +29,7 @@ import Services from '@/ui/Services';
 import Work from './ui/Work';
 import Team from './ui/Team';
 import Sponsors from './ui/Sponsors';
+import Footer from '@/common/components/Footer';
 
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
         <Work />
         <Team />
         <Sponsors />
+        <Footer />
       </Box>
     </ThemeProvider>
   )

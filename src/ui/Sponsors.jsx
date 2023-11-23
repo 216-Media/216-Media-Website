@@ -54,9 +54,8 @@ const SponsorImg = styled('img')({
 })
 
 const SponsorContainer = styled(Box)(({ theme }) => ({
-    paddingTop: theme.spacing(6)
+    padding: theme.spacing(6, 0),
 }))
-
 
 
 function Sponsors(){
@@ -68,11 +67,9 @@ function Sponsors(){
                     CarouselResponsive
                 }
             >
-                
                 {sponsors.map((sponsor, index) => (
                     <SponsorImg key={index} src={sponsor}/>
                 ))}
-                
                 
             </Carousel>
         </SponsorContainer>

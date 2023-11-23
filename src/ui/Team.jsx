@@ -1,5 +1,7 @@
 import { 
-    Colors, TeamItems, TeamMemberDetails 
+    Colors, 
+    TeamItems, 
+    TeamMemberDetails 
 } from '@/common/constants';
 
 import{

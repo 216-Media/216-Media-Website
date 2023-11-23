@@ -48,7 +48,7 @@ function CustomButton({ buttonText }){
         borderRadius: '50px',
         padding: theme.spacing(1, 1),
         border: `2px solid ${Colors.AZTEC}`,
-        width: '170px',
+        width: '180px',
         '& .MuiSvgIcon-root': {
             transition: 'transform 0.5s ease',
         },
