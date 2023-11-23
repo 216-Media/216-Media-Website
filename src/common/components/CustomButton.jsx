@@ -53,7 +53,7 @@ function CustomButton({ buttonText }){
             transition: 'transform 0.5s ease',
         },
         '&:hover .MuiSvgIcon-root': {
-            animation: `${ArrowAnimation} 1s infinite ease-in-out`,
+            animation: `${ArrowAnimation} 1s ease-in-out`,
         },
     }))
 

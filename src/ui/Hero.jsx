@@ -38,7 +38,7 @@ function Hero(){
     }))
 
     const HeroBox = styled(Box)(({ theme }) => ({
-        backgroundColor: '#E6F0FF'
+        backgroundColor: Colors.SkyBlue
     }))
 
     return(

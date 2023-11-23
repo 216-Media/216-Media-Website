@@ -17,36 +17,13 @@ import
     KeyboardArrowDownIcon 
 from '@mui/icons-material/KeyboardArrowDown';
 
-import
-    Fade
-from '@mui/material/Fade';
 
-import {
-    keyframes
-} from '@emotion/react'
+import DownArrowAnimation from '@/common/components/DownArrowAnimation';
 
-const bounceArrowDown = keyframes`
-    from, 20%, 53%, 80%, to {
-        transform: translate3d(0,0,0);
-    }
-    40%, 43% {
-        transform: translate3d(0, -4px, 0);
-    }
 
-    70% {
-        transform: translate3d(0, -5px, 0);
-    }
-
-    90% {
-        transform: translate3d(0,-2px,0);
-    }
-`;
-
-const BouncingImg = styled('img')
 
 const AboutContainer = styled(Container)(({ theme }) => ({
     display: 'flex',
-    zIndex: '-3',
     flexDirection: 'column',
     textAlign: 'left',
     alignItems: 'left',
@@ -77,18 +54,12 @@ const TitleContainer = styled(Box)(({ theme }) => ({
     alignItems: 'center'
 }));
 
-const DownArrow = styled(KeyboardArrowDownIcon)(({ theme }) => ({
-    width: '35px',
-    height: '35px',
-    animation: `${bounceArrowDown} 1.8s ease infinite`
-}))
-
 function AboutUs(){
     return(
         <AboutContainer>
             <TitleContainer>
                 <Title>About Us</Title>
-                <DownArrow />
+                <DownArrowAnimation />
             </TitleContainer>
             <Description>
                 216 Media is an independent, creative, events and communications agency.

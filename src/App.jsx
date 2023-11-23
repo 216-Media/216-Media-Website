@@ -27,6 +27,7 @@ from '@/ui/AboutUs';
 
 import Services from '@/ui/Services';
 import Work from './ui/Work';
+import Team from './ui/Team';
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
         <AboutUs />
         <Services />
         <Work />
+        <Team />
       </Box>
     </ThemeProvider>
   )

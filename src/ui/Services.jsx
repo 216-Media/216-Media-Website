@@ -33,11 +33,14 @@ from 'typewriter-effect';
 
 const ServiceContainer = styled(Box)(({ theme }) => ({
     backgroundImage: `url(${ServicePatternImg})`,
-    backgroundSize: '100% 120%',
+    backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
     width: '100%',
+    
     padding: theme.spacing(30, 0, 8, 0),
+    maxWidth: '1700px',
+    margin: '0 auto',
 }))
 
 const TitleContainer = styled(Box)(({ theme }) => ({
