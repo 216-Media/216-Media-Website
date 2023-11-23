@@ -1,12 +1,13 @@
 import { 
-    Colors, TeamItems 
+    Colors, TeamItems, TeamMemberDetails 
 } from '@/common/constants';
 
 import{
     styled,
     Container,
     Typography,
-    Box
+    Box,    
+    Grid
 } from '@mui/material';
 
 import
@@ -16,6 +17,11 @@ from '@/assets/icons/team-pattern.png'
 import 
     DownArrowAnimation 
 from '@/common/components/DownArrowAnimation';
+
+import 
+    TeamProfileCard 
+from '@/common/components/TeamProfileCard';
+
 
 const TeamContainer = styled(Container)(({ theme }) => ({
     padding: theme.spacing(6, 0, 0, 0)
@@ -67,6 +73,10 @@ const TeamLink = styled(Typography)(({ theme }) => ({
     }
 }))
 
+const CardGridLayout = styled(Grid)({
+
+})
+
 
 function Team(){
     return(
@@ -84,6 +94,20 @@ function Team(){
                         ))}
                     </TeamLinkBox>
                 </HeaderContainer>
+
+                <CardGridLayout container spacing={2}>
+                    {TeamMemberDetails.map((profile, index) => (
+                        <Grid item xs={12} sm={6} md={4} lg={3}>
+                            <TeamProfileCard
+                             name={profile.name}
+                             title={profile.title}
+                             memberImg={profile.memberImg}
+                             patternImg={profile.patternImg}
+                             description={profile.description}
+                            />
+                        </Grid>
+                    ))}
+                </CardGridLayout>
             </TeamContainer>
         </TeamPatternContainer>
     )

@@ -1,3 +1,14 @@
+import { 
+    Bob,
+    Allison,
+    Nomzamo
+} from "@/assets/images"
+
+import 
+    TeamMemberPattern
+from '@/assets/icons/team-member-pattern.png'
+
+
 export const Colors = {
     White: '#FFFFFF',
     Black: '#0F0F0F0',
@@ -29,4 +40,11 @@ export const TeamItems = [
     'DESIGNERS',
     'THINKERS',
     'DOERS'
+]
+
+export const TeamMemberDetails = [
+    { name: 'Bob', title: 'CEO & Founder', memberImg: Bob, patternImg: TeamMemberPattern, description: 'Brief description of the team placed below their names' },
+    { name: 'David', title: 'CEO & Founder', memberImg: Bob, patternImg: TeamMemberPattern, description: 'Brief description of the team placed below their names' },
+    { name: 'Nomzamo', title: 'CEO & Founder', memberImg: Nomzamo, patternImg: TeamMemberPattern, description: 'Brief description of the team placed below their names' },
+    { name: 'Allison', title: 'CEO & Founder', memberImg: Allison, patternImg: TeamMemberPattern, description: 'Brief description of the team placed below their names' },
 ]

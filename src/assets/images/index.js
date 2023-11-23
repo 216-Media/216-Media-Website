@@ -13,6 +13,9 @@ import Sena_brand_bottle from '@/assets/images/sena_brand_bottle.png';
 import Sena_work_items from '@/assets/images/sena_work_items.png';
 import SRS_logo from '@/assets/images/SRS_logo.png';
 import Website_mockup from '@/assets/images/Website_mockup.png'
+import Bob from '@/assets/images/Bob.png';
+import Allison from '@/assets/images/Allison.png';
+import Nomzamo from '@/assets/images/Nomzamo.png';
 
 export {
     RMA_brand_car,
@@ -29,5 +32,8 @@ export {
     Sena_brand_bottle,
     Sena_work_items,
     SRS_logo,
-    Website_mockup
+    Website_mockup,
+    Allison,
+    Bob,
+    Nomzamo
 }
