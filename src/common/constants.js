@@ -1,17 +1,20 @@
 import { 
     Bob,
     Allison,
-    Nomzamo
+    Nomzamo,
+    David
 } from "@/assets/images"
 
-import 
-    TeamMemberPattern
-from '@/assets/icons/team-member-pattern.png'
+
+import {
+    getRandomPattern
+} from '@/common/helpers/randomizePatterns';
+
 
 
 export const Colors = {
     White: '#FFFFFF',
-    Black: '#0F0F0F0',
+    Grey: '#808080',
     HavelockBlue: '#429DD6',
     AZTEC: '#070A0A',
     Lemon: '#F8EF22',
@@ -40,11 +43,36 @@ export const TeamItems = [
     'DESIGNERS',
     'THINKERS',
     'DOERS'
-]
+];
+
 
 export const TeamMemberDetails = [
-    { name: 'Bob', title: 'CEO & Founder', memberImg: Bob, patternImg: TeamMemberPattern, description: 'Brief description of the team placed below their names' },
-    { name: 'David', title: 'CEO & Founder', memberImg: Bob, patternImg: TeamMemberPattern, description: 'Brief description of the team placed below their names' },
-    { name: 'Nomzamo', title: 'CEO & Founder', memberImg: Nomzamo, patternImg: TeamMemberPattern, description: 'Brief description of the team placed below their names' },
-    { name: 'Allison', title: 'CEO & Founder', memberImg: Allison, patternImg: TeamMemberPattern, description: 'Brief description of the team placed below their names' },
+    { 
+        name: 'Bob', 
+        title: 'CEO & Founder', 
+        memberImg: Bob, 
+        patternImg: getRandomPattern(), 
+        description: 'Brief description of the team placed below their names' 
+    },
+    { 
+        name: 'David', 
+        title: 'CEO & Founder', 
+        memberImg: David, 
+        patternImg: getRandomPattern(), 
+        description: 'Brief description of the team placed below their names' 
+    },
+    { 
+        name: 'Nomzamo', 
+        title: 'CEO & Founder', 
+        memberImg: Nomzamo, 
+        patternImg: getRandomPattern(), 
+        description: 'Brief description of the team placed below their names' 
+    },
+    { 
+        name: 'Allison', 
+        title: 'CEO & Founder', 
+        memberImg: Allison, 
+        patternImg: getRandomPattern(), 
+        description: 'Brief description of the team placed below their names' 
+    },
 ]

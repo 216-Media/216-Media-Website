@@ -16,6 +16,11 @@ import Website_mockup from '@/assets/images/Website_mockup.png'
 import Bob from '@/assets/images/Bob.png';
 import Allison from '@/assets/images/Allison.png';
 import Nomzamo from '@/assets/images/Nomzamo.png';
+import David from '@/assets/images/David.png'
+import TeamMemberPattern1 from '@/assets/images/team-member-pattern1.png';
+import TeamMemberPattern2 from '@/assets/images/team-member-pattern2.png';
+import TeamMemberPattern3 from '@/assets/images/team-member-pattern3.png';
+import TeamMemberPattern4 from '@/assets/images/team-member-pattern4.png';
 
 export {
     RMA_brand_car,
@@ -35,5 +40,10 @@ export {
     Website_mockup,
     Allison,
     Bob,
-    Nomzamo
+    Nomzamo,
+    David,
+    TeamMemberPattern1,
+    TeamMemberPattern2,
+    TeamMemberPattern3,
+    TeamMemberPattern4
 }

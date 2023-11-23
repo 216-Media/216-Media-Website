@@ -1,38 +1,45 @@
-import { styled, Box, Typography } from "@mui/material";
+import { 
+    styled, 
+    Box, 
+    Typography 
+} from "@mui/material";
 
-import { Colors } from "@/common/constants";
+import { 
+    Colors 
+} from "@/common/constants";
 
 const CardContainer = styled(Box)(({ theme }) => ({
   position: "relative",
   padding: theme.spacing(3, 3),
-  borderRadius: "5px",
+  borderRadius: "10px",
   backgroundColor: Colors.AZTEC,
-  width: "300px",
+  width: "260px",
 }));
 
 const TeamMemberImg = styled("img")(({ theme }) => ({
   position: "relative",
-  width: "230px",
-  height: '230px',
-  objectFit: 'cover'
+  width: "200px",
+  height: '200px',
+  objectFit: 'contain'
 }));
 
 const PatternLayout = styled("img")(({ theme }) => ({
   position: "absolute",
   left: "50px",
-  top: "130px",
+  top: "80px",
   width: "200px",
 }));
 
 const RoleText = styled(Typography)(({ theme }) => ({
-  fontSize: "19px",
-  color: Colors.BlackOpac,
+  fontSize: "16px",
+  color: Colors.Grey,
 }));
 
 const TeamMemberName = styled(Typography)(({ theme }) => ({
   fontWeight: "bold",
   fontSize: "24px",
   color: Colors.White,
+  paddingTop: theme.spacing(1)
 }));
 
 const TeamMemberDescription = styled(Typography)(({ theme }) => ({
@@ -40,15 +47,23 @@ const TeamMemberDescription = styled(Typography)(({ theme }) => ({
   color: Colors.White,
   fontWeight: "400",
   marginBlock: theme.spacing(2),
+  maxWidth: '170px'
 }));
-function TeamProfileCard({ memberImg, patternImg, name, title, description }) {
+function TeamProfileCard(
+    { memberImg, patternImg, name, title, description }) {
   return (
     <CardContainer>
       <TeamMemberImg src={memberImg} alt={"Team member"} />
       <PatternLayout src={patternImg} alt={"Pattern Layout"} />
-      <RoleText>{title}</RoleText>
-      <TeamMemberName>{name}</TeamMemberName>
-      <TeamMemberDescription>{description}</TeamMemberDescription>
+      <RoleText>
+        {title}
+      </RoleText>
+      <TeamMemberName>
+        {name}
+      </TeamMemberName>
+      <TeamMemberDescription>
+        {description}
+       </TeamMemberDescription>
     </CardContainer>
   );
 }

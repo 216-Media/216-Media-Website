@@ -50,7 +50,7 @@ const TitleContainer = styled(Box)({
 
 const HeaderContainer = styled(Box)(({ theme }) => ({
     display: 'flex',
-    justifyContent: 'space-around',
+    gap: theme.spacing(5),
     alignItems: 'center'
 }))
 
@@ -58,8 +58,6 @@ const TeamLinkBox = styled(Box)(({ theme }) => ({
     display: 'flex',
     alignItems: 'center',
     gap: theme.spacing(5)
-
-    
 }));
 
 const TeamLink = styled(Typography)(({ theme }) => ({
@@ -73,9 +71,9 @@ const TeamLink = styled(Typography)(({ theme }) => ({
     }
 }))
 
-const CardGridLayout = styled(Grid)({
-
-})
+const CardGridLayout = styled(Grid)(({ theme }) => ({
+    marginBlock: theme.spacing(10)
+}))
 
 
 function Team(){
@@ -90,14 +88,29 @@ function Team(){
 
                     <TeamLinkBox>
                         {TeamItems.map((link, index) => (
-                            <TeamLink key={index} variant='body2'>{link}</TeamLink>
+                            <TeamLink 
+                             key={index} 
+                             variant='body2'
+                            >
+                            {link}
+                            </TeamLink>
                         ))}
                     </TeamLinkBox>
                 </HeaderContainer>
 
-                <CardGridLayout container spacing={2}>
+                <CardGridLayout container spacing={12}>
                     {TeamMemberDetails.map((profile, index) => (
-                        <Grid item xs={12} sm={6} md={4} lg={3}>
+                        <Grid 
+                         item 
+                         key={index} 
+                         xs={12} 
+                         sm={6} 
+                         md={4} 
+                         lg={3}
+                         style={{ 
+                            marginTop: index % 2 === 0 ? '0' : '80px'
+                        }}
+                        >
                             <TeamProfileCard
                              name={profile.name}
                              title={profile.title}
