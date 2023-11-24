@@ -6,7 +6,7 @@ export const palette = (mode) => {
     return {
         mode: themeBackground,
         background: {
-            default: mode ? Colors.AZTEC : Colors.White
+            default: mode ? Colors.ScaleGrey : Colors.White
         },
         primary: {
             main: Colors.HavelockBlue,

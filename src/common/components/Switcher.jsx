@@ -48,16 +48,10 @@ const IOSSwitch = styled(Switch)(({ theme }) => ({
   },
 }));
 
-export default function CustomIOSwitch() {
-  const [checked, setChecked] = useState(false);
+export default function CustomIOSwitch({checked, onChange}) {
 
-  const handleChange = (event) => {
-    setChecked(event.target.checked);
-  };
 
   return (
-    <IOSSwitch checked={checked} onChange={handleChange}>
-      {checked ? <LightModeIcon /> : <DarkModeIcon />}
-    </IOSSwitch>
+    <IOSSwitch checked={checked} onChange={onChange}/>
   );
 }

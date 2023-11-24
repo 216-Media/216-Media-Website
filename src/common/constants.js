@@ -44,7 +44,8 @@ export const Colors = {
     Lemon: '#F8EF22',
     HollywoodCerise: '#EB058C',
     SkyBlue: '#E2F0F9',
-    BlackOpac: 'rgba(0, 0, 0, 0.6)'
+    BlackOpac: 'rgba(0, 0, 0, 0.6)',
+    ScaleGrey: 'hsl(215, 21%, 11%)'
 }
 
 export const EventType = {

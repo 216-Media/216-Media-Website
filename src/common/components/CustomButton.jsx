@@ -38,8 +38,8 @@ function CustomButton({ buttonText }){
       }
     `;
     const CustomButton = styled(Button)(({ theme }) => ({
-        backgroundColor: `${Colors.White}`,
-        color: `${Colors.AZTEC}`,
+        backgroundColor: theme.palette.mode === 'light' ? `${Colors.White}` : `${Colors.HavelockBlue}`,
+        color: theme.palette.mode === 'light' ? `${Colors.AZTEC}` : `${Colors.White}`,
         position: 'relative',
         overflow: 'hidden',
         cursor: 'pointer',
