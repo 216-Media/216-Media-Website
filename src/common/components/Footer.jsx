@@ -13,6 +13,7 @@ import {
 
 
 import { 
+    ArrowRightAnimation,
     Colors, 
     socialIcons 
 } from '@/common/constants';
@@ -39,7 +40,11 @@ from '@/assets/icons/twitter.png';
 
 import 
     WhatsApp
-from '@/assets/icons/whatsApp.png'
+from '@/assets/icons/whatsApp.png';
+
+import 
+    EastIcon 
+from '@mui/icons-material/East';
 
 const iconList = [
     {
@@ -140,6 +145,9 @@ const SocialImg = styled('img')({
     width: '22px'
 })
 
+
+
+
 function Footer(){
     return(
         <Fragment>
@@ -151,8 +159,10 @@ function Footer(){
                         Pan-African creative and 
                         communications agency 
                     </Title>
-                    <CustomButton 
-                     buttonText={"LET'S CONNECT"} 
+                    <CustomButton
+                     arrowDirection={<EastIcon />}
+                     buttonText={"LET'S CONNECT"}
+                     animationDirection={ArrowRightAnimation} 
                     />
                 </FooterDetailsContainer>
                 <FooterFormContainer>

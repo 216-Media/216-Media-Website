@@ -15,28 +15,16 @@ import
     ArrowRightImg
 from '@/assets/icons/right-arrow.png';
 
-import{
-    keyframes
-} from '@emotion/react';
+
 
 import 
     EastIcon 
 from '@mui/icons-material/East';
 
-function CustomButton({ buttonText }){
+function CustomButton({ buttonText, arrowDirection, animationDirection }){
     const [isClicked, setIsClicked] = useState(false);
 
-    const ArrowAnimation = keyframes`
-    0% {
-        transform: translateX(0);
-      }
-      50% {
-        transform: translateX(40px); 
-      }
-      100% {
-        transform: translateX(100px); 
-      }
-    `;
+   
     const CustomButton = styled(Button)(({ theme }) => ({
         backgroundColor: theme.palette.mode === 'light' ? `${Colors.White}` : `${Colors.HavelockBlue}`,
         color: theme.palette.mode === 'light' ? `${Colors.AZTEC}` : `${Colors.White}`,
@@ -53,18 +41,14 @@ function CustomButton({ buttonText }){
             transition: 'transform 0.5s ease',
         },
         '&:hover .MuiSvgIcon-root': {
-            animation: `${ArrowAnimation} 1s ease-in-out`,
+            animation: `${animationDirection} 1s ease-in-out`,
         },
     }))
-
-    const ArrowRight = styled(EastIcon)(({ theme }) => ({
-        
-    }));
 
     return (
         <CustomButton>
             {buttonText}
-            <ArrowRight />
+            {arrowDirection}
         </CustomButton>
     )
 }

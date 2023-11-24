@@ -9,7 +9,8 @@ import {
 } from '@mui/material';
 
 import {
-  Link
+  Link,
+  NavLink
 } from 'react-router-dom'
 
 import 
@@ -43,7 +44,7 @@ import
   CustomIOSwitch 
 from '@/common/components/Switcher';
 
-import DarkMode from '@mui/icons-material/DarkMode';
+
 import { 
   Colors,
   EventType, NavBarItems 
@@ -61,7 +62,7 @@ const CloseBox = styled(Box)(({ theme }) => ({
   marginInline: '10px'
 }))
 
-const NavbarLink = styled(Link)(({ theme }) => ({
+const NavbarLink = styled(NavLink)(({ theme }) => ({
   position: 'relative',
   textDecoration: 'none',
   color: Colors.AZTEC,
@@ -87,7 +88,17 @@ const NavbarLink = styled(Link)(({ theme }) => ({
   },
 
   '&:hover':{
-    color: Colors.HavelockBlue
+    color: Colors.HavelockBlue,
+    
+  },
+
+  '&.active':{
+    color: Colors.HavelockBlue,
+    '&::before': {
+      visibility: 'visible',
+      transform: 'scaleX(1)',
+      transition: 'transform 0.3s ease-in-out, visibility 0s linear 0s',
+    },
   },
   
   [theme.breakpoints.down('md')]: {
@@ -194,7 +205,7 @@ function NavigationBar({
           </Fragment>
         ))}
         <ActionBox>
-          <NavbarLink>216 HEALTH</NavbarLink>
+          <NavbarLink to='/216Health'>216 HEALTH</NavbarLink>
           <Logo width={30} src={healthImg} alt='216-health' />
         </ActionBox>
       </List>
@@ -211,22 +222,28 @@ function NavigationBar({
 
   return (
     <NavbarContainer>
-      <Logo width={80} src={LogoImg} alt='216-logo'/>
+      <ParentLink to='/'>
+        <Logo 
+        width={80} 
+        src={LogoImg} 
+        alt='216-logo'
+        />
+      </ParentLink>
+      
       <NavbarLeftBox>
         <NavbarLinkBox>
-          
-          <NavbarLink>ABOUT US</NavbarLink>
-          <NavbarLink>OUR SERVICES</NavbarLink>
-          <NavbarLink>OUR WORK</NavbarLink>
-          <NavbarLink>OUR CLIENT</NavbarLink>
-          <NavbarLink>CONTACT US</NavbarLink>
+          <NavbarLink to='/info'>ABOUT US</NavbarLink>
+          <NavbarLink to='ourServices'>OUR SERVICES</NavbarLink>
+          <NavbarLink to='/ourWork'>OUR WORK</NavbarLink>
+          <NavbarLink to='/ourClient'>OUR CLIENT</NavbarLink>
+          <NavbarLink to='/contactUs'>CONTACT US</NavbarLink>
         </NavbarLinkBox>
         <NavbarLeftBox>
        
           <CustomIOSwitch checked={theming} onChange={handleThemeChange}/>
           
           <ActionBox>
-            <NavbarLink>216 HEALTH</NavbarLink>
+            <NavbarLink to='/216Health'>216 HEALTH</NavbarLink>
             <Logo width={30} src={healthImg} alt='216-health' />
           </ActionBox>
           <HamIcon onClick={toggleDrawer('top', true)}/>

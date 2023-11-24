@@ -9,6 +9,7 @@ import
 from '@/assets/icons/service-patterns.png';
 
 import { 
+    ArrowRightAnimation,
     Colors 
 } from '@/common/constants';
 
@@ -23,6 +24,12 @@ import {
 import 
     Typewriter 
 from 'typewriter-effect';
+
+
+import 
+    EastIcon 
+from '@mui/icons-material/East';
+
 
 
 const ServiceContainer = styled(Box)(({ theme }) => ({
@@ -81,7 +88,11 @@ function Services(){
                     />
                 </TypeWriterComponent>
                 
-                <CustomButton buttonText={'LEARN MORE'}/>
+                <CustomButton 
+                 arrowDirection={<EastIcon />} 
+                 buttonText={'LEARN MORE'}
+                 animationDirection={ArrowRightAnimation}
+                />
                 </TitleContainer>
             </ServiceContainer>
         </Fragment>

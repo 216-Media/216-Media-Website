@@ -5,29 +5,10 @@ import {
     David
 } from "@/assets/images"
 
-import 
-    CallIcon 
-from '@mui/icons-material/Call';
 
-import 
-    CopyrightIcon 
-from '@mui/icons-material/Copyright';
-
-import 
-    InstagramIcon 
-from '@mui/icons-material/Instagram';
-
-import 
-    TwitterIcon 
-from '@mui/icons-material/Twitter';
-
-import 
-    FacebookOutlinedIcon 
-from '@mui/icons-material/FacebookOutlined';
-
-import 
-    LanguageIcon 
-from '@mui/icons-material/Language';
+import{
+    keyframes
+} from '@emotion/react';
 
 
 import {
@@ -69,6 +50,30 @@ export const TeamItems = [
     'THINKERS',
     'DOERS'
 ];
+
+export const ArrowRightAnimation = keyframes`
+0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(40px); 
+  }
+  100% {
+    transform: translateX(100px); 
+  }
+`;
+
+export const ArrowDownAnimation = keyframes`
+0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(40px); 
+  }
+  100% {
+    transform: translateY(100px); 
+  }
+`;
 
 
 export const TeamMemberDetails = [

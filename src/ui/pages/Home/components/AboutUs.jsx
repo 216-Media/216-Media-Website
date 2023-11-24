@@ -6,6 +6,7 @@ import {
 } from '@mui/material';
 
 import {
+    ArrowRightAnimation,
     Colors
 } from '@/common/constants';
 
@@ -13,10 +14,10 @@ import
     CustomButton 
 from '@/common/components/CustomButton';
 
-import 
-    KeyboardArrowDownIcon 
-from '@mui/icons-material/KeyboardArrowDown';
 
+import 
+    EastIcon 
+from '@mui/icons-material/East';
 
 import DownArrowAnimation from '@/common/components/DownArrowAnimation';
 
@@ -69,7 +70,11 @@ function AboutUs(){
                 blending the worlds of design and event management to craft unique and memorable
                 moments that leave a lasting impression
             </Description>
-            <CustomButton buttonText={'LEARN MORE'}/>
+            <CustomButton 
+             arrowDirection={<EastIcon />} 
+             buttonText={'LEARN MORE'}
+             animationDirection={ArrowRightAnimation}
+            />
         </AboutContainer>
     )
 }
