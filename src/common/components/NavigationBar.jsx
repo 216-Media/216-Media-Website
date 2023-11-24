@@ -61,12 +61,35 @@ const CloseBox = styled(Box)(({ theme }) => ({
   marginInline: '10px'
 }))
 
-const NavbarLink = styled(Typography)(({ theme }) => ({
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
+const NavbarLink = styled(Link)(({ theme }) => ({
+  position: 'relative',
+  textDecoration: 'none',
+  color: Colors.AZTEC,
   fontSize: '13px',
   gap: theme.spacing(3),
+  '&::before': {
+    content: '""',
+    position: 'absolute',
+    width: '100%',
+    height: '2px',
+    bottom: 0,
+    left: 0,
+    backgroundColor: 'currentColor',
+    visibility: 'hidden',
+    transform: 'scaleX(0)',
+    transition: 'transform 0.3s ease-in-out, visibility 0s linear 0.3s',
+  },
+
+  '&:hover::before': {
+    visibility: 'visible',
+    transform: 'scaleX(1)',
+    transition: 'transform 0.3s ease-in-out, visibility 0s linear 0s',
+  },
+
+  '&:hover':{
+    color: Colors.HavelockBlue
+  },
+  
   [theme.breakpoints.down('md')]: {
     display: 'none'
   }
@@ -191,12 +214,12 @@ function NavigationBar({
       <Logo width={80} src={LogoImg} alt='216-logo'/>
       <NavbarLeftBox>
         <NavbarLinkBox>
-          {NavBarItems.map((link, index) => (
-              <NavbarLink 
-                key={index} 
-                variant='body2'
-              >{link}</NavbarLink>
-          ))}
+          
+          <NavbarLink>ABOUT US</NavbarLink>
+          <NavbarLink>OUR SERVICES</NavbarLink>
+          <NavbarLink>OUR WORK</NavbarLink>
+          <NavbarLink>OUR CLIENT</NavbarLink>
+          <NavbarLink>CONTACT US</NavbarLink>
         </NavbarLinkBox>
         <NavbarLeftBox>
        
