@@ -1,0 +1,92 @@
+import {
+    styled,
+    Box,
+    Typography,
+} from '@mui/material';
+
+import
+    ServicePatternImg
+from '@/assets/icons/service-patterns.png';
+
+import { 
+    Colors 
+} from '@/common/constants';
+
+import 
+    CustomButton 
+from '@/common/components/CustomButton';
+
+import { 
+    Fragment 
+} from 'react';
+
+import 
+    Typewriter 
+from 'typewriter-effect';
+
+
+const ServiceContainer = styled(Box)(({ theme }) => ({
+    backgroundImage: `url(${ServicePatternImg})`,
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    width: '100%',
+    padding: theme.spacing(30, 0, 8, 0),
+ 
+    margin: '0 auto',
+}))
+
+const TitleContainer = styled(Box)(({ theme }) => ({
+    display: 'flex',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    alignItems: 'center',
+    
+}))
+const Title = styled(Typography)(({ theme }) => ({
+    color: `${Colors.AZTEC}`,
+    fontSize: '26px',
+    fontWeight: 'bold',
+    marginBlock: theme.spacing(3)
+}))
+
+const TypeWriterComponent = styled(Typography)(({ theme }) => ({
+    marginBottom: theme.spacing(3),
+    fontWeight: '500',
+    fontSize: '20px',
+    color: `${Colors.AZTEC}`
+}))
+
+function Services(){
+
+    return(
+        <Fragment>
+            <ServiceContainer>
+                <TitleContainer>
+                    <Title>
+                        The great services we offer are
+                    </Title>
+                <TypeWriterComponent>
+                    <Typewriter 
+                        options={{ 
+                            strings: [
+                                'Advertising', 
+                                'Design',
+                                'Digital Marketing',
+                                'Branding',
+                                'Trend Insight Strategy'
+                            ],
+                            autoStart: true,
+                            loop: true
+                        }}
+                    />
+                </TypeWriterComponent>
+                
+                <CustomButton buttonText={'LEARN MORE'}/>
+                </TitleContainer>
+            </ServiceContainer>
+        </Fragment>
+    )
+};
+
+export default Services;
