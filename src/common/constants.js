@@ -5,6 +5,30 @@ import {
     David
 } from "@/assets/images"
 
+import 
+    CallIcon 
+from '@mui/icons-material/Call';
+
+import 
+    CopyrightIcon 
+from '@mui/icons-material/Copyright';
+
+import 
+    InstagramIcon 
+from '@mui/icons-material/Instagram';
+
+import 
+    TwitterIcon 
+from '@mui/icons-material/Twitter';
+
+import 
+    FacebookOutlinedIcon 
+from '@mui/icons-material/FacebookOutlined';
+
+import 
+    LanguageIcon 
+from '@mui/icons-material/Language';
+
 
 import {
     getRandomPattern
@@ -34,7 +58,7 @@ export const NavBarItems = [
     'OUR SERVICES',
     'OUR WORK',
     'OUR CLIENTS',
-    '216 HEALTH'
+    'CONTACT US'
 ]
 
 export const TeamItems = [
@@ -98,27 +122,28 @@ export const CarouselResponsive = {
 
 export const socialIcons = [
     {
-        link: '216 Media',
-        icon: LanguageIcon
+        linkText: '216 Media',
+        icon: 'LanguageIcon'
     },
     {
-        link: '00115348400',
-        icon: CallIcon
+        linkText: '00115348400',
+        icon: 'CallIcon'
     },
     {
-        link: '216 Media',
-        icon: FacebookOutlinedIcon
+        linkText: '216 Media',
+        icon: 'FacebookOutlinedIcon'
     },
     {
-        link: '@twoonesix_media',
-        icon: InstagramIcon
+        linkText: '@twoonesix_media',
+        icon: 'InstagramIcon'
     },
     {
-        link: '@twoonesix_media',
-        icon: TwitterIcon
+        linkText: '@twoonesix_media',
+        icon: 'TwitterIcon'
     },
     {
-        link: '216Media-EverythingMedia&Marketing',
-        icon: CopyrightIcon
+        linkText: '216Media-EverythingMedia&Marketing',
+        icon: 'CopyrightIcon'
     }
 ]
+

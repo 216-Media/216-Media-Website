@@ -13,7 +13,7 @@ const CardContainer = styled(Box)(({ theme }) => ({
   padding: theme.spacing(3, 3),
   borderRadius: "10px",
   backgroundColor: Colors.AZTEC,
-  width: "260px",
+  width: "250px",
 }));
 
 const TeamMemberImg = styled("img")(({ theme }) => ({

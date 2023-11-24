@@ -11,19 +11,81 @@ import {
 } from 'react-router-dom';
 
 import 
+    CallIcon 
+from '@mui/icons-material/Call';
+
+import 
+    CopyrightIcon 
+from '@mui/icons-material/Copyright';
+
+import 
+    InstagramIcon 
+from '@mui/icons-material/Instagram';
+
+import 
+    TwitterIcon 
+from '@mui/icons-material/Twitter';
+
+import 
+    FacebookOutlinedIcon 
+from '@mui/icons-material/FacebookOutlined';
+
+import 
     LanguageIcon 
 from '@mui/icons-material/Language';
 
 
-
 import { 
-    Colors 
+    Colors, 
+    socialIcons 
 } from '@/common/constants';
 
 import { 
     Fragment 
 } from 'react';
-import CustomButton from './CustomButton';
+
+import 
+    CustomButton 
+from './CustomButton';
+
+import
+    Facebook
+from '@/assets/icons/facebook.png';
+
+import
+    Instagram
+from '@/assets/icons/Instagram.png';
+
+import
+    Twitter
+from '@/assets/icons/twitter.png';
+
+import 
+    WhatsApp
+from '@/assets/icons/whatsApp.png'
+
+const iconList = [
+    {
+        icon: WhatsApp,
+        linkText: '00115348400'
+    },
+    {
+        icon: Facebook,
+        linkText: '216 Media'
+    },
+    {
+        icon: Instagram,
+        linkText: '@twoonesix_media'
+    },
+    {
+        icon: Twitter,
+        linkText: '@twoonesix_media'
+    },
+    {
+        icon: '',
+        linkText: '216Media-EverythingMedia&Marketing'
+    }
+]
 
 const SeparatorBox = styled(Box)({
     width: '100%',
@@ -35,18 +97,24 @@ const SocialBox = styled(Box)(({ theme }) => ({
     padding: theme.spacing(3, 0),
     backgroundColor: Colors.AZTEC,
     width: '100%',
-    height: '60px'
+    height: '70px'
 }))
 
 const SocialMedia = styled(Container)(({ theme }) => ({
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    justifyContent: 'space-evenly',
+    gap: theme.spacing(4)
 }))
 
 const ConnectContainer = styled(Container)(({ theme }) => ({
     display: 'flex',
     justifyContent: 'space-between',
-    paddingBlock: theme.spacing(6)
+    paddingBlock: theme.spacing(6),
+    [theme.breakpoints.down('sm')]: {
+        flexDirection: 'column',
+        justifyContent: 'center'
+    }
 }))
 
 const Title = styled(Typography)({
@@ -76,13 +144,17 @@ const SocialMediaDetails = styled(Box)({
     gap: '2px'
 })
 
-const LinkText = styled(Typography)({
+const LinkText = styled(Typography)(({ theme }) =>({
     color: Colors.White,
-    fontSize: '12px'
-})
+    fontSize: '12px',
+    [theme.breakpoints.down('sm')]: {
+        display: 'none'
+    }
+}))
 
-const WebIcon = styled(LanguageIcon)({
-    color: Colors.White
+const SocialImg = styled('img')({
+    color: Colors.White,
+    width: '22px'
 })
 
 
@@ -119,18 +191,14 @@ function Footer(){
             </ConnectContainer>
             <SocialBox>
                 <SocialMedia>
-                    <SocialMediaDetails>
-                        <WebIcon />
-                        <LinkText>
-                            216 Media
-                        </LinkText>
-                    </SocialMediaDetails>
-                    <SocialMediaDetails>
-                        <WebIcon />
-                        <LinkText>
-                            216 Media
-                        </LinkText>
-                    </SocialMediaDetails>
+                    {iconList.map((social, index) => (
+                        <SocialMediaDetails key={index}>
+                            <SocialImg src={social.icon}/>
+                            <LinkText>
+                                {social.linkText}
+                            </LinkText>
+                        </SocialMediaDetails>
+                    ))}
                 </SocialMedia>
             </SocialBox>
         </Fragment>

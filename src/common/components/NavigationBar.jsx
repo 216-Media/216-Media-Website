@@ -8,9 +8,9 @@ import {
   Drawer
 } from '@mui/material';
 
-import 
-  Switch
-from '@mui/joy/Switch'
+import {
+  Link
+} from 'react-router-dom'
 
 import 
   React,
@@ -45,8 +45,13 @@ from '@/common/components/Switcher';
 
 import DarkMode from '@mui/icons-material/DarkMode';
 import { 
+  Colors,
   EventType, NavBarItems 
 } from '@/common/constants';
+
+import 
+  CloseIcon 
+from '@mui/icons-material/Close';
 
 
 const CloseBox = styled(Box)(({ theme }) => ({
@@ -61,6 +66,7 @@ const NavbarLink = styled(Typography)(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'center',
   fontSize: '13px',
+  
   gap: theme.spacing(3),
   [theme.breakpoints.down('md')]: {
     display: 'none'
@@ -75,6 +81,10 @@ const HamIcon = styled(MenuIcon)(({ theme }) => ({
   [theme.breakpoints.down('md')]: {
     display: 'block'
   }
+}))
+
+const Close = styled(CloseIcon)(({ theme }) => ({
+  cursor: 'pointer'
 }))
 
 const NavbarContainer = styled(Container)(({ theme }) => ({
@@ -115,6 +125,11 @@ const NavbarLeftBox = styled(Box)(({ theme }) => ({
   alignItems: 'center'
 }))
 
+const ParentLink = styled(Link)({
+  textDecoration: 'none',
+  color: Colors.AZTEC
+})
+
 function NavigationBar({
   setTheme,
   theming
@@ -143,7 +158,7 @@ function NavigationBar({
     >
       <CloseBox >
         <Logo width={70} src={LogoImg} alt='216-logo'/>
-        <HamIcon />
+        <Close />
       </CloseBox>
 
       <List component='nav'>
@@ -178,12 +193,15 @@ function NavigationBar({
       <NavbarLeftBox>
         <NavbarLinkBox>
           {NavBarItems.map((link, index) => (
-            <NavbarLink key={index} variant='body2'>{link}</NavbarLink>
+              <NavbarLink 
+                key={index} 
+                variant='body2'
+              >{link}</NavbarLink>
           ))}
         </NavbarLinkBox>
         <NavbarLeftBox>
        
-            <CustomIOSwitch />
+          <CustomIOSwitch checked={theming} onChange={handleThemeChange}/>
           
           <ActionBox>
             <NavbarLink>216 HEALTH</NavbarLink>

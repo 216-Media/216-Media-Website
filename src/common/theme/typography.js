@@ -1,6 +1,9 @@
 export const typography = () => {
     return{
-        fontFamily: ['Metropolis-regular, sans-serif'].join(','),
-        fontFamilyBold: ['Metropolis-bold, sans-serif'].join(',')
+        fontFamily: [
+            'Metropolis, sans-serif'].join(','),
+        fontWeightRegular: 500,
+        fontWeightBold: 800,
+        fontWeightBolder: 900
     }
 }
