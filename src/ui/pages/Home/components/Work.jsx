@@ -57,7 +57,6 @@ const sajaClient = [
     { url: Saja_logo, width: 200, height: 200},
     { url: Coida, width: 1200, height: 700},
     { url: RMA_brand_van, width: 600, height: 400},
-    
     { url: Saja_bagpack, width: 400, height: 400},
 ];
 
@@ -74,11 +73,9 @@ const roaClient = [
 ]
 
 const SRSClient = [
-   
-    { url: SRS_logo, width:250, height:250 },
-    { url: Website_mockup, width:600, height:1200 },
-    { url: Notepads, width: 250, height:250 },
-    
+    { url: SRS_logo, width:120, height:120 },
+    { url: Website_mockup, width:900, height:1803 },
+    { url: Notepads, width: 233, height:230 },
 ]
 
 const ClientContainer = styled(Box)({
@@ -124,8 +121,7 @@ function Work(){
                     />
                     <Overlay className="overlay">
                         <OverlayText
-                            variant="h6"
-                        >
+                            variant="h6">
                             Saja Client
                         </OverlayText>
                     </Overlay>
@@ -172,8 +168,7 @@ function Work(){
                     />
                     <Overlay className="overlay">
                         <OverlayText
-                            variant="h6"
-                        >
+                            variant="h6">
                             Structured Risk Solutions
                         </OverlayText>
                     </Overlay>

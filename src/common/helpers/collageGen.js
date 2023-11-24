@@ -28,5 +28,5 @@ const generatePhotoGrid = (photos) => {
 
 
 export { 
-    generatePhotoGrid 
+  generatePhotoGrid 
 }

@@ -28,6 +28,7 @@ const AboutContainer = styled(Container)(({ theme }) => ({
     textAlign: 'left',
     alignItems: 'left',
     padding: theme.spacing(6, 0, 0, 0),
+    marginBottom: theme.spacing(3),
     [theme.breakpoints.down('sm')]: {
         textAlign: 'center',
         alignItems: 'center'

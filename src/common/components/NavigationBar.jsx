@@ -66,7 +66,6 @@ const NavbarLink = styled(Typography)(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'center',
   fontSize: '13px',
-  
   gap: theme.spacing(3),
   [theme.breakpoints.down('md')]: {
     display: 'none'

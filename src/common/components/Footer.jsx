@@ -10,29 +10,6 @@ import {
     Link
 } from 'react-router-dom';
 
-import 
-    CallIcon 
-from '@mui/icons-material/Call';
-
-import 
-    CopyrightIcon 
-from '@mui/icons-material/Copyright';
-
-import 
-    InstagramIcon 
-from '@mui/icons-material/Instagram';
-
-import 
-    TwitterIcon 
-from '@mui/icons-material/Twitter';
-
-import 
-    FacebookOutlinedIcon 
-from '@mui/icons-material/FacebookOutlined';
-
-import 
-    LanguageIcon 
-from '@mui/icons-material/Language';
 
 
 import { 
@@ -67,23 +44,29 @@ from '@/assets/icons/whatsApp.png'
 const iconList = [
     {
         icon: WhatsApp,
-        linkText: '00115348400'
+        linkText: '00115348400',
+        link: 'tel:00115348400'
+        
     },
     {
         icon: Facebook,
-        linkText: '216 Media'
+        linkText: '216 Media',
+        link: 'https://www.facebook.com/people/216-Media/61552352197950/'
     },
     {
         icon: Instagram,
-        linkText: '@twoonesix_media'
+        linkText: '@twoonesix_media',
+        link: 'https://www.instagram.com/twoonesix_media/'
     },
     {
         icon: Twitter,
-        linkText: '@twoonesix_media'
+        linkText: '@twoonesix_media',
+        link: 'https://twitter.com/216_media'
     },
     {
         icon: '',
-        linkText: '216Media-EverythingMedia&Marketing'
+        linkText: '216Media-EverythingMedia&Marketing',
+        link: ''
     }
 ]
 
@@ -157,8 +140,6 @@ const SocialImg = styled('img')({
     width: '22px'
 })
 
-
-
 function Footer(){
     return(
         <Fragment>
@@ -193,7 +174,13 @@ function Footer(){
                 <SocialMedia>
                     {iconList.map((social, index) => (
                         <SocialMediaDetails key={index}>
-                            <SocialImg src={social.icon}/>
+                            <a href={social.link}
+                            target="_blank"
+                            rel='noopener noreferrer'
+                            >
+                                <SocialImg src={social.icon}/>
+                            </a>
+                            
                             <LinkText>
                                 {social.linkText}
                             </LinkText>

@@ -12,7 +12,6 @@ from '@/common/components/NavigationBar';
 
 import '@/font.scss';
 
-
 import 
   ThemeProvider 
 from '@/common/theme/ThemeProvider';
@@ -47,7 +46,6 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Router>
-      
         <Routes>
           <Route path='/' element={
             <Box>

@@ -32,7 +32,6 @@ const ServiceContainer = styled(Box)(({ theme }) => ({
     backgroundPosition: 'center',
     width: '100%',
     padding: theme.spacing(30, 0, 8, 0),
- 
     margin: '0 auto',
 }))
 
