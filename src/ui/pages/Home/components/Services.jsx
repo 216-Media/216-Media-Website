@@ -50,7 +50,7 @@ const TitleContainer = styled(Box)(({ theme }) => ({
     
 }))
 const Title = styled(Typography)(({ theme }) => ({
-    color: `${Colors.AZTEC}`,
+    color: theme.palette.mode === 'light' ? `${Colors.AZTEC}` : `${Colors.White}`,
     fontSize: '26px',
     fontWeight: 'bold',
     marginBlock: theme.spacing(3)
@@ -60,7 +60,7 @@ const TypeWriterComponent = styled(Typography)(({ theme }) => ({
     marginBottom: theme.spacing(3),
     fontWeight: '500',
     fontSize: '20px',
-    color: `${Colors.AZTEC}`
+    color: theme.palette.mode === 'light' ? `${Colors.AZTEC}` : `${Colors.White}`,
 }))
 
 function Services(){

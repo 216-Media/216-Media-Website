@@ -46,6 +46,10 @@ import
     EastIcon 
 from '@mui/icons-material/East';
 
+import 
+    CopyRight
+from '@/assets/icons/CopyRight.png';
+
 const iconList = [
     {
         icon: WhatsApp,
@@ -69,17 +73,17 @@ const iconList = [
         link: 'https://twitter.com/216_media'
     },
     {
-        icon: '',
+        icon: CopyRight,
         linkText: '216Media-EverythingMedia&Marketing',
         link: ''
     }
 ]
 
-const SeparatorBox = styled(Box)({
+const SeparatorBox = styled(Box)(({theme}) => ({
     width: '100%',
     height: '2px',
-    backgroundColor: Colors.AZTEC
-})
+    backgroundColor: theme.palette.mode === 'light' ? `${Colors.AZTEC}` : `${Colors.White}`,
+}))
 
 const SocialBox = styled(Box)(({ theme }) => ({
     padding: theme.spacing(3, 0),
@@ -105,13 +109,13 @@ const ConnectContainer = styled(Container)(({ theme }) => ({
     }
 }))
 
-const Title = styled(Typography)({
-    color: `${Colors.AZTEC}`,
+const Title = styled(Typography)(({ theme }) => ({
+    color: theme.palette.mode === 'light' ? `${Colors.AZTEC}` : `${Colors.White}`,
     fontWeight: 'bold',
     fontSize: '22px',
     maxWidth: '300px',
     marginBottom: '30px'
-})
+}))
 
 const FooterDetailsContainer = styled(Box)(({ theme }) => ({
     marginBottom: theme.spacing(1)
@@ -135,7 +139,7 @@ const SocialMediaDetails = styled(Box)({
 const LinkText = styled(Typography)(({ theme }) =>({
     color: Colors.White,
     fontSize: '12px',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
         display: 'none'
     }
 }))
@@ -144,9 +148,6 @@ const SocialImg = styled('img')({
     color: Colors.White,
     width: '22px'
 })
-
-
-
 
 function Footer(){
     return(
@@ -190,7 +191,6 @@ function Footer(){
                             >
                                 <SocialImg src={social.icon}/>
                             </a>
-                            
                             <LinkText>
                                 {social.linkText}
                             </LinkText>

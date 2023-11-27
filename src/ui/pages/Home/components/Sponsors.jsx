@@ -40,12 +40,12 @@ const sponsors = [
     Sena,
     Vodacom
 ]
-const Title = styled(Typography)({
-    color: `${Colors.AZTEC}`,
+const Title = styled(Typography)(({ theme }) => ({
+    color: theme.palette.mode === 'light' ? `${Colors.AZTEC}` : `${Colors.White}`,
     fontWeight: 'bold',
     fontSize: '26px',
     textAlign: 'center'
-})
+}))
 
 const SponsorImg = styled('img')({
     width: '100px',

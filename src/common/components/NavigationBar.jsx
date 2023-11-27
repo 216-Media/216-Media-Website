@@ -65,7 +65,7 @@ const CloseBox = styled(Box)(({ theme }) => ({
 const NavbarLink = styled(NavLink)(({ theme }) => ({
   position: 'relative',
   textDecoration: 'none',
-  color: Colors.AZTEC,
+  color: theme.palette.mode === 'light' ? `${Colors.AZTEC}` : `${Colors.White}`,
   fontSize: '13px',
   gap: theme.spacing(3),
   '&::before': {
@@ -232,15 +232,17 @@ function NavigationBar({
       
       <NavbarLeftBox>
         <NavbarLinkBox>
-          <NavbarLink to='/info'>ABOUT US</NavbarLink>
-          <NavbarLink to='ourServices'>OUR SERVICES</NavbarLink>
-          <NavbarLink to='/ourWork'>OUR WORK</NavbarLink>
-          <NavbarLink to='/ourClient'>OUR CLIENT</NavbarLink>
+          <NavbarLink to='ourServices'>SERVICES</NavbarLink>
+          <NavbarLink to='/ourWork'>WORK</NavbarLink>
+          <NavbarLink to='/ourClient'>CLIENT</NavbarLink>
           <NavbarLink to='/contactUs'>CONTACT US</NavbarLink>
         </NavbarLinkBox>
         <NavbarLeftBox>
        
-          <CustomIOSwitch checked={theming} onChange={handleThemeChange}/>
+          <CustomIOSwitch 
+            checked={theming} 
+            onChange={handleThemeChange}
+          />
           
           <ActionBox>
             <NavbarLink to='/216Health'>216 HEALTH</NavbarLink>

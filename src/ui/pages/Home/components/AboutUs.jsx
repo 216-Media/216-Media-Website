@@ -19,7 +19,9 @@ import
     EastIcon 
 from '@mui/icons-material/East';
 
-import DownArrowAnimation from '@/common/components/DownArrowAnimation';
+import 
+    DownArrowAnimation 
+from '@/common/components/DownArrowAnimation';
 
 
 
@@ -37,14 +39,14 @@ const AboutContainer = styled(Container)(({ theme }) => ({
 }));
 
 const Title = styled(Typography)(({ theme }) => ({
-    color: `${Colors.AZTEC}`,
+    color: theme.palette.mode === 'light' ? `${Colors.AZTEC}` : `${Colors.White}`,
     fontWeight: '800',
     fontSize: '26px',
     marginRight: '2px'
 }));
 
 const Description = styled(Typography)(({ theme }) => ({
-    color: `${Colors.AZTEC}`,
+    color: theme.palette.mode === 'light' ? `${Colors.AZTEC}` : `${Colors.White}`,
     fontWeight: '400',
     fontSize: '17px',
     maxWidth: '585px',

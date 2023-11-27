@@ -11,15 +11,6 @@ import {
     Colors 
 } from '@/common/constants';
 
-import
-    ArrowRightImg
-from '@/assets/icons/right-arrow.png';
-
-
-
-import 
-    EastIcon 
-from '@mui/icons-material/East';
 
 function CustomButton({ buttonText, arrowDirection, animationDirection }){
     const [isClicked, setIsClicked] = useState(false);
@@ -35,7 +26,7 @@ function CustomButton({ buttonText, arrowDirection, animationDirection }){
         gap: theme.spacing(2),
         borderRadius: '50px',
         padding: theme.spacing(1, 1),
-        border: `2px solid ${Colors.AZTEC}`,
+        border: `2px solid ${ theme.palette.mode === 'light' ? Colors.AZTEC : Colors.White}`,
         width: '180px',
         '& .MuiSvgIcon-root': {
             transition: 'transform 0.5s ease',

@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
-import { styled, Switch } from '@mui/material';
-import LightModeIcon from '@mui/icons-material/LightMode';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
+import React from 'react';
+
+import { 
+  styled, 
+  Switch 
+} from '@mui/material';
 
 const IOSSwitch = styled(Switch)(({ theme }) => ({
   width: 42,
@@ -52,6 +54,9 @@ export default function CustomIOSwitch({checked, onChange}) {
 
 
   return (
-    <IOSSwitch checked={checked} onChange={onChange}/>
+    <IOSSwitch 
+      checked={checked} 
+      onChange={onChange}
+    />
   );
 }

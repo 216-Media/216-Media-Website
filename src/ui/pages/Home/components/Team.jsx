@@ -30,10 +30,13 @@ const TeamContainer = styled(Container)(({ theme }) => ({
 }))
 
 const Title = styled(Typography)(({ theme }) =>({
-    color: `${Colors.AZTEC}`,
+    color: theme.palette.mode === 'light' ? `${Colors.AZTEC}` : `${Colors.White}`,
     fontWeight: 'bold',
     fontSize: '26px',
     marginRight: '2px',
+    [theme.breakpoints.down("sm")]: {
+        textAlign: 'center'
+    }
 }))
 
 const TeamPatternContainer = styled(Box)(({ theme }) => ({
@@ -45,10 +48,10 @@ const TeamPatternContainer = styled(Box)(({ theme }) => ({
 }))
 
 
-const TitleContainer = styled(Box)({
+const TitleContainer = styled(Box)(({ theme }) => ({
     display: 'flex',
-    alignItems: 'left'
-})
+    alignItems: 'left',
+}))
 
 const HeaderContainer = styled(Box)(({ theme }) => ({
     display: 'flex',
@@ -73,8 +76,12 @@ const TeamLink = styled(Typography)(({ theme }) => ({
 }))
 
 const CardGridLayout = styled(Grid)(({ theme }) => ({
-    marginBlock: theme.spacing(10)
+    marginBlock: theme.spacing(10),
+    display: 'flex',
+    justifyContent: 'center'
 }))
+
+
 
 
 function Team(){
@@ -86,7 +93,6 @@ function Team(){
                         <Title>Our Team</Title>
                         <DownArrowAnimation />
                     </TitleContainer>
-
                     <TeamLinkBox>
                         {TeamItems.map((link, index) => (
                             <TeamLink 
@@ -104,7 +110,7 @@ function Team(){
                         <Grid 
                          item 
                          key={index} 
-                         xs={12} 
+                         xs={12}
                          sm={6} 
                          md={4} 
                          lg={3}

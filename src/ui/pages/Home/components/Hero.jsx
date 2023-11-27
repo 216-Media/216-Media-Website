@@ -9,6 +9,10 @@ import {
     Colors 
 } from "@/common/constants";
 
+import 
+    Particles
+from 'react-particles-js'
+
 
 function Hero(){
     const HeroContainer = styled(Container)(({ theme }) => ({
@@ -42,6 +46,7 @@ function Hero(){
 
     return(
         <HeroBox>
+
             <HeroContainer>
                 <Box>
                     <Title 
