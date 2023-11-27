@@ -13,9 +13,7 @@ import {
 
 
 function CustomButton({ buttonText, arrowDirection, animationDirection }){
-    const [isClicked, setIsClicked] = useState(false);
 
-   
     const CustomButton = styled(Button)(({ theme }) => ({
         backgroundColor: theme.palette.mode === 'light' ? `${Colors.White}` : `${Colors.HavelockBlue}`,
         color: theme.palette.mode === 'light' ? `${Colors.AZTEC}` : `${Colors.White}`,

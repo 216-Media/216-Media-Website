@@ -84,7 +84,7 @@ const ClientContainer = styled(Box)({
     cursor: 'pointer',
     '&:hover .overlay': {
         opacity: 1
-    }
+    },
 })
 
 const Overlay = styled(Box)({
