@@ -55,6 +55,10 @@ import
   AboutPage 
 from '@/ui/pages/About/AboutPage';
 
+import 
+  Contact 
+from '@/ui/pages/Contacts/Contact';
+
 
 function App() {
 
@@ -78,7 +82,10 @@ function App() {
             </Box>
           }/>
 
-          <Route path='/info' element={<AboutPage />} />
+          <Route
+            path='contact-us'
+            element={<Contact />}
+          />
         </Routes>
       </Router>
     </ThemeProvider>

@@ -63,6 +63,13 @@ export const ArrowRightAnimation = keyframes`
   }
 `;
 
+export const wheelAnimation = keyframes`
+    to {
+        opacity: 0;
+        top: 40px;
+    }
+`;
+
 export const ArrowDownAnimation = keyframes`
 0% {
     transform: translateY(0);

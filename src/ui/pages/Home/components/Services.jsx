@@ -31,7 +31,6 @@ import
 from '@mui/icons-material/East';
 
 
-
 const ServiceContainer = styled(Box)(({ theme }) => ({
     backgroundImage: `url(${ServicePatternImg})`,
     backgroundSize: 'cover',
@@ -90,7 +89,9 @@ function Services(){
                 
                 <CustomButton 
                  arrowDirection={<EastIcon />} 
-                 buttonText={'LEARN MORE'}
+                 buttonText={
+                    'LEARN MORE'
+                }
                  animationDirection={ArrowRightAnimation}
                 />
                 </TitleContainer>

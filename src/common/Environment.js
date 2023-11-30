@@ -12,7 +12,7 @@ export const Environments = {
         uiHost: '',
         uiBase: '/',
         apiHost: '',
-        assetBase: '' ////
+        assetBase: '' ////https://assetBase.co.za
     }
 };
 

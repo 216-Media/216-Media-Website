@@ -22,10 +22,14 @@ import TeamMemberPattern2 from '@/assets/images/team-member-pattern2.png';
 import TeamMemberPattern3 from '@/assets/images/team-member-pattern3.png';
 import TeamMemberPattern4 from '@/assets/images/team-member-pattern4.png';
 import Banner from '@/assets/images/banner.png'
+import HomeImg from '@/assets/images/home_img.jpg';
+import ContactUsImg from '@/assets/images/contact_us_img.jpg';
 
 export {
     RMA_brand_car,
+    HomeImg,
     RMA_brand_van,
+    ContactUsImg,
     Coida,
     ROA_brand_pen,
     Notepads,
