@@ -52,10 +52,6 @@ import {
 } from 'react-router-dom';
 
 import 
-  AboutPage 
-from '@/ui/pages/About/AboutPage';
-
-import 
   Contact 
 from '@/ui/pages/Contacts/Contact';
 
@@ -81,7 +77,6 @@ function App() {
               <Footer />
             </Box>
           }/>
-
           <Route
             path='contact-us'
             element={<Contact />}

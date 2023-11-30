@@ -20,10 +20,6 @@ useState }
 from 'react';
 
 import { 
-  Typography 
-} from '@mui/material';
-
-import { 
   Container 
 } from '@mui/material';
 
@@ -232,6 +228,7 @@ function NavigationBar({
       
       <NavbarLeftBox>
         <NavbarLinkBox>
+          <NavbarLink to='/'>HOME</NavbarLink>
           <NavbarLink to='ourServices'>SERVICES</NavbarLink>
           <NavbarLink to='/ourWork'>WORK</NavbarLink>
           <NavbarLink to='/ourClient'>CLIENT</NavbarLink>

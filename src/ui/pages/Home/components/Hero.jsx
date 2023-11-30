@@ -71,7 +71,9 @@ function Hero(){
                         variant='h1'
                         fontWeight={'bold'}
                     >
-                        We are an independent, Pan-African creative and communications agency
+                        We are an independent, 
+                        Pan-African creative and 
+                        communications agency
                     </Title>
 
                     <ScrollTrigger />
