@@ -25,6 +25,10 @@ import
     Typewriter 
 from 'typewriter-effect';
 
+import {
+    Link
+} from 'react-router-dom';
+
 
 import 
     EastIcon 
@@ -87,13 +91,16 @@ function Services(){
                     />
                 </TypeWriterComponent>
                 
-                <CustomButton 
-                 arrowDirection={<EastIcon />} 
-                 buttonText={
-                    'LEARN MORE'
-                }
-                 animationDirection={ArrowRightAnimation}
+                <Link to='/'>
+                    <CustomButton 
+                        arrowDirection={<EastIcon />} 
+                        buttonText={
+                        'LEARN MORE'
+                        }
+                        animationDirection={ArrowRightAnimation}
                 />
+                </Link>
+                
                 </TitleContainer>
             </ServiceContainer>
         </Fragment>

@@ -40,6 +40,10 @@ import
   CustomIOSwitch 
 from '@/common/components/Switcher';
 
+import 
+  LogoWhite
+from '@/assets/icons/216-logo-white.png'
+
 
 import { 
   Colors,
@@ -191,15 +195,43 @@ function NavigationBar({
       </CloseBox>
 
       <List component='nav'>
-        {NavBarItems.map((text, index) => (
-          <Fragment key={index}>
+          <Fragment>
             <Divider />
-            <ListItem button key={index}>
-              <ListItemText primary={text}/>
-            </ListItem>
+            <Link to='/'>
+              <ListItem button>
+                <ListItemText primary={'HOME'}/>
+              </ListItem>
+            </Link>
             
           </Fragment>
-        ))}
+
+          <Fragment>
+            <Divider />
+            <Link to='/services'>
+              <ListItem button>
+              <ListItemText primary={'SERVICES'}/>
+              </ListItem>
+            </Link>
+          </Fragment>
+
+          <Fragment>
+            <Divider />
+            <Link to='/work'>
+              <ListItem button>
+                <ListItemText primary={'WORK'}/>
+              </ListItem>
+            </Link>  
+          </Fragment>
+
+          <Fragment>
+            <Divider />
+            <Link to='/contact-us'>
+              <ListItem button>
+                <ListItemText primary={'CONTACT US'}/>
+              </ListItem>
+            </Link>
+          </Fragment>
+       
         <ActionBox>
           <NavbarLink to='/216Health'>216 HEALTH</NavbarLink>
           <Logo width={30} src={healthImg} alt='216-health' />
@@ -219,11 +251,19 @@ function NavigationBar({
   return (
     <NavbarContainer>
       <ParentLink to='/'>
-        <Logo 
-        width={80} 
-        src={LogoImg} 
-        alt='216-logo'
-        />
+        {
+          theming ? 
+          <Logo 
+           width={60} 
+           src={LogoWhite} 
+           alt='21-logo' 
+          /> : 
+          <Logo 
+           width={60} 
+           src={LogoImg} 
+           alt='216-logo' 
+          />
+        }
       </ParentLink>
       
       <NavbarLeftBox>
@@ -231,7 +271,6 @@ function NavigationBar({
           <NavbarLink to='/'>HOME</NavbarLink>
           <NavbarLink to='ourServices'>SERVICES</NavbarLink>
           <NavbarLink to='/ourWork'>WORK</NavbarLink>
-          <NavbarLink to='/ourClient'>CLIENT</NavbarLink>
           <NavbarLink to='/contact-us'>CONTACT US</NavbarLink>
         </NavbarLinkBox>
         <NavbarLeftBox>

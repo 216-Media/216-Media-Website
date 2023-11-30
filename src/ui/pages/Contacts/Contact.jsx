@@ -1,111 +1,112 @@
-import { 
-    Fragment 
-} from 'react';
+import { Fragment } from "react";
 
-import{
-    styled,
-    Box,
-    Typography
-} from '@mui/material';
+import { styled, Box, Typography } from "@mui/material";
 
-import
-    ArrowDownwardIcon
-from '@mui/icons-material/ArrowDownward'
+import { ArrowDownAnimation, Colors } from "@/common/constants";
 
-import
-    ServicePatternImg
-from '@/assets/icons/service-patterns.png';
+import NavigationBar from "@/common/components/NavigationBar";
 
-import { 
-    ArrowDownAnimation,
-    Colors 
-} from '@/common/constants';
+import { ContactUsImg } from "@/assets/images";
 
-import 
-    NavigationBar 
-from '@/common/components/NavigationBar';
+import ScrollTrigger from "@/common/components/ScrollTrigger";
 
-import{
-    ContactUsImg
-}from '@/assets/images'
+import ContactForm from "@/ui/pages/Contacts/components/ContactForm";
+import Footer from "@/common/components/Footer/Footer";
 
-import 
-    ScrollTrigger 
-from '@/common/components/ScrollTrigger';
-
-
-const Overlay = styled('div')({
-    position: 'absolute',
-    top: '0',
-    left: '0',
-    width: '100%',
-    height: '100%',
-    backgroundColor: Colors.BlackOpac,
-    zIndex: -1
-})
-
+const Overlay = styled("div")({
+  position: "absolute",
+  top: "0",
+  left: "0",
+  width: "100%",
+  height: "100%",
+  backgroundColor: Colors.BlackOpac,
+  zIndex: 1,
+});
 
 const ContactContainer = styled(Box)(({ theme }) => ({
-    backgroundImage: `url(${ContactUsImg})`,
-    position: 'relative',
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: '100% 80%',
-    width: '100%',
-    margin: '0 auto',
-    padding: theme.spacing(30, 0, 10, 0),
-   
-}))
+  backgroundImage: `url(${ContactUsImg})`,
+  position: "relative",
+  backgroundSize: "cover",
+  backgroundRepeat: "no-repeat",
+  backgroundPosition: "100% 80%",
+  width: "100%",
+  margin: "0 auto",
+  padding: theme.spacing(30, 0, 10, 0),
+}));
 
 const ContactTitle = styled(Typography)(({ theme }) => ({
-    color: Colors.White,
-    fontSize: '50px',
-    marginBlock: theme.spacing(3),
-    textAlign: 'center',
-    [theme.breakpoints.down('md')]: {
-        fontSize: '44px'
-    },
-    [theme.breakpoints.down('sm')]: {
-        fontSize: '35px'
-    }
-}))
+  color: Colors.White,
+  fontSize: "50px",
+  marginBlock: theme.spacing(3),
+  textAlign: "center",
+  [theme.breakpoints.down("md")]: {
+    fontSize: "44px",
+  },
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "35px",
+  },
+}));
 
 const ContactContainerDetails = styled(Box)(({ theme }) => ({
-    display: 'flex',
-    justifyContent: 'center',
-    flexDirection: 'column',
-    alignItems: 'center'
-}))
+  display: "flex",
+  justifyContent: "center",
+  flexDirection: "column",
+  alignItems: "center",
+}));
 
 const ContactBoxForm = styled(Box)(({ theme }) => ({
-    textAlign: 'center',
-}))
+  paddingBlock: theme.spacing(12),
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+}));
 
-function Contact(){
-    return(
-        <Fragment>
-            <NavigationBar />
+const ContactFormTitle = styled(Typography)({
+  textAlign: "center",
+  fontSize: "32px",
+});
 
-            <ContactContainer>
-                <Overlay />
-                <ContactContainerDetails>
+const ContactFormDescription = styled(Typography)({
+  textAlign: "center",
+  fontSize: "16px",
+  paddingTop: "33px",
+  width: "490px",
+  color: Colors.SmokyGrape,
+});
 
-                    <Box position='relative'>
-                        <ContactTitle
-                            variant='h1'
-                            fontWeight={'bold'}
-                        >
-                            Chat to Us
-                        </ContactTitle>
+function Contact() {
+  return (
+    <Fragment>
+      <NavigationBar />
 
-                        <ScrollTrigger />
-                    </Box>      
-                </ContactContainerDetails>
-            </ContactContainer>
+      <ContactContainer>
+        <Overlay />
+        <ContactContainerDetails>
+          <Box position="relative" zIndex="1">
+            <ContactTitle variant="h1" fontWeight={"bold"}>
+              Chat to Us
+            </ContactTitle>
 
+            <ScrollTrigger />
+          </Box>
+        </ContactContainerDetails>
+      </ContactContainer>
 
-        </Fragment>
-    )
+      <ContactBoxForm>
+        <ContactFormTitle variant="h2" fontWeight={"bold"}>
+          HAVE A PROJECT?
+        </ContactFormTitle>
+        <ContactFormDescription>
+          Please complete the below form to contact us and we’ll make sure the
+          right team member gets back to you
+        </ContactFormDescription>
+
+        <ContactForm />
+      </ContactBoxForm>
+
+      <Footer />
+    </Fragment>
+  );
 }
 
 export default Contact;
