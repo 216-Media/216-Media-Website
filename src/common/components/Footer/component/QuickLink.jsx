@@ -13,9 +13,9 @@ import{
 } from 'react-router-dom';
 
 const QuickLinkTitle = styled(Typography)(({ theme }) => ({
-    fontSize: '14px',
+    fontSize: '20px',
     color: Colors.White,
-    paddingBottom: theme.spacing(5)
+    marginBottom: theme.spacing(4)
 }))
 
 const QuickLinkContainer = styled(Box)({
@@ -23,17 +23,23 @@ const QuickLinkContainer = styled(Box)({
     flexDirection: 'column'
 })
 
-const QuickLink = styled(Link)({
-    color: Colors.Concrete,
-})
+const ActualLink = styled(Link)(({ theme }) => ({
+    color: Colors.Grey,
+    textDecoration: 'none',
+    marginBottom: theme.spacing(1)
+}))
 
-function QuickLink({title, link}){
+function QuickLink({ title, linkObj }){
     return(
         <QuickLinkContainer>
             <QuickLinkTitle>{title}</QuickLinkTitle>
-            <QuickLink>{link}</QuickLink>
+            {linkObj.map((link, index) => (
+                <ActualLink key={index}>
+                    {link}
+                </ActualLink>
+            ))}
         </QuickLinkContainer>
-    )
+    );
 }
 
 export default QuickLink;

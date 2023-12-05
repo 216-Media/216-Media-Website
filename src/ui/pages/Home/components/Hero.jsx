@@ -33,7 +33,7 @@ const Title = styled(Typography)(({ theme }) => ({
     color: `${Colors.White}`,
     textAlign: 'center',
     maxWidth: '800px',
-    margin: theme.spacing(4, 0, 4, 0),
+    margin: theme.spacing(9, 0, 4, 0),
     [theme.breakpoints.down('md')]: {
         fontSize: '44px',
     },
@@ -59,6 +59,7 @@ const HeroBox = styled(Box)(({ theme }) => ({
     backgroundSize: 'cover',
     backgroundPosition: '100% 40%', 
     zIndex: -1,
+    height: '100vh'
 }))
 function Hero(){
 

@@ -45,6 +45,20 @@ export const NavBarItems = [
     'CONTACT US'
 ]
 
+export const linkObjTeam = [
+   'Culture',
+   'Network',
+];
+
+export const linkObjAbout = [
+    'About us',
+    'Testimony',
+];
+
+export const linkObjCompany = [
+    'Our Company',
+]
+
 export const TeamItems = [
     'LEADERS',
     'INNOVATORS',
@@ -52,6 +66,19 @@ export const TeamItems = [
     'THINKERS',
     'DOERS'
 ];
+
+export const aboutQuickLink = [
+    {
+        link: '/about-us',
+        title: 'About Us'
+    },
+    {
+        link: '/work',
+        title: 'Work'
+    }
+    
+
+]
 
 export const ArrowRightAnimation = keyframes`
 0% {

@@ -1,6 +1,10 @@
 import { Fragment } from "react";
 
-import { styled, Box, Typography } from "@mui/material";
+import { 
+  styled, 
+  Box, 
+  Typography 
+} from "@mui/material";
 
 import { ArrowDownAnimation, Colors } from "@/common/constants";
 
@@ -29,6 +33,7 @@ const ContactContainer = styled(Box)(({ theme }) => ({
   backgroundSize: "cover",
   backgroundRepeat: "no-repeat",
   backgroundPosition: "100% 80%",
+  height: '100vh',
   width: "100%",
   margin: "0 auto",
   padding: theme.spacing(30, 0, 10, 0),

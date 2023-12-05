@@ -24,11 +24,13 @@ import TeamMemberPattern4 from '@/assets/images/team-member-pattern4.png';
 import Banner from '@/assets/images/banner.png'
 import HomeImg from '@/assets/images/home_img.jpg';
 import ContactUsImg from '@/assets/images/contact_us_img.jpg';
+import ServiceImg from '@/assets/images/service_img.jpg';
 
 export {
     RMA_brand_car,
     HomeImg,
     RMA_brand_van,
+    ServiceImg,
     ContactUsImg,
     Coida,
     ROA_brand_pen,

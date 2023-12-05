@@ -16,6 +16,7 @@ import {
 import 
   React,
   { Fragment,
+    useEffect,
 useState }
 from 'react';
 
@@ -62,72 +63,20 @@ const CloseBox = styled(Box)(({ theme }) => ({
   marginInline: '10px'
 }))
 
-const NavbarLink = styled(NavLink)(({ theme }) => ({
-  position: 'relative',
-  textDecoration: 'none',
-  color: theme.palette.mode === 'light' ? `${Colors.AZTEC}` : `${Colors.White}`,
-  fontSize: '13px',
-  gap: theme.spacing(3),
-  '&::before': {
-    content: '""',
-    position: 'absolute',
-    width: '100%',
-    height: '2px',
-    bottom: 0,
-    left: 0,
-    backgroundColor: 'currentColor',
-    visibility: 'hidden',
-    transform: 'scaleX(0)',
-    transition: 'transform 0.3s ease-in-out, visibility 0s linear 0.3s',
-  },
 
-  '&:hover::before': {
-    visibility: 'visible',
-    transform: 'scaleX(1)',
-    transition: 'transform 0.3s ease-in-out, visibility 0s linear 0s',
-  },
 
-  '&:hover':{
-    color: Colors.HavelockBlue,
-    
-  },
 
-  '&.active':{
-    color: Colors.HavelockBlue,
-    '&::before': {
-      visibility: 'visible',
-      transform: 'scaleX(1)',
-      transition: 'transform 0.3s ease-in-out, visibility 0s linear 0s',
-    },
-  },
-  
-  [theme.breakpoints.down('md')]: {
-    display: 'none'
-  }
-}))
-
-const HamIcon = styled(MenuIcon)(({ theme }) => ({
-  cursor: 'pointer',
-  display: 'none',
-  marginRight: theme.spacing(2),
-  marginLeft: '13px',
-  [theme.breakpoints.down('md')]: {
-    display: 'block'
-  }
-}))
 
 const Close = styled(CloseIcon)(({ theme }) => ({
   cursor: 'pointer'
 }))
 
+
+
 const NavbarContainer = styled(Container)(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
-  padding: theme.spacing(2),
-  [theme.breakpoints.down('md')]: {
-    padding: theme.spacing(2)
-  }
 }))
 
 const Logo = styled('img')(({ theme }) => ({
@@ -167,10 +116,96 @@ function NavigationBar({
   setTheme,
   theming
 }) {
+  const NavbarBox = styled(Box)(({ theme }) => ({
 
+    position: 'fixed',
+    zIndex: '2',
+    backgroundColor: isTop ? Colors.White : 'transparent',
+    height: '90px',
+    overflow: 'hidden',
+    top: 0,
+    width: '100%',
+    padding: theme.spacing(2),
+    [theme.breakpoints.down('md')]: {
+      padding: theme.spacing(2)
+    }
+  }))
+
+  const HamIcon = styled(MenuIcon)(({ theme }) => ({
+    cursor: 'pointer',
+    display: 'none',
+    color: !isTop ? Colors.White : Colors.AZTEC,
+    marginRight: theme.spacing(2),
+    marginLeft: '13px',
+    [theme.breakpoints.down('md')]: {
+      display: 'block'
+    }
+  }))
+
+  const NavbarLink = styled(NavLink)(({ theme }) => ({
+    position: 'relative',
+    textDecoration: 'none',
+    color: isTop ? `${Colors.AZTEC}` : `${Colors.White}`,
+    fontSize: '13px',
+    gap: theme.spacing(3),
+    '&::before': {
+      content: '""',
+      position: 'absolute',
+      width: '100%',
+      height: '2px',
+      bottom: 0,
+      left: 0,
+      backgroundColor: 'currentColor',
+      visibility: 'hidden',
+      transform: 'scaleX(0)',
+      transition: 'transform 0.3s ease-in-out, visibility 0s linear 0.3s',
+    },
+  
+    '&:hover::before': {
+      visibility: 'visible',
+      transform: 'scaleX(1)',
+      transition: 'transform 0.3s ease-in-out, visibility 0s linear 0s',
+    },
+  
+    '&:hover':{
+      color: Colors.HavelockBlue,
+      
+    },
+  
+    '&.active':{
+      color: Colors.HavelockBlue,
+      '&::before': {
+        visibility: 'visible',
+        transform: 'scaleX(1)',
+        transition: 'transform 0.3s ease-in-out, visibility 0s linear 0s',
+      },
+    },
+    
+    [theme.breakpoints.down('md')]: {
+      display: 'none'
+    }
+  }))
   const [mobileMenu, setMobileMenu] = useState({
     top: false
   })
+  const [isTop, setIsTop] = useState(true);
+
+
+  useEffect(() => {
+    const changeColor = () => {
+      setIsTop(window.scrollY >= 90);
+    };
+
+    changeColor();
+
+    window.addEventListener('scroll', changeColor);
+
+    return () => {
+      window.removeEventListener('scroll', changeColor);
+    };
+  }, []);
+
+ 
 
   const toggleDrawer = (anchor, open) => (event) => {
     if(event.type === EventType.Keydown &&
@@ -197,39 +232,39 @@ function NavigationBar({
       <List component='nav'>
           <Fragment>
             <Divider />
-            <Link to='/'>
+            <ParentLink to='/'>
               <ListItem button>
                 <ListItemText primary={'HOME'}/>
               </ListItem>
-            </Link>
+            </ParentLink>
             
           </Fragment>
 
           <Fragment>
             <Divider />
-            <Link to='/services'>
+            <ParentLink to='/services'>
               <ListItem button>
               <ListItemText primary={'SERVICES'}/>
               </ListItem>
-            </Link>
+            </ParentLink>
           </Fragment>
 
           <Fragment>
             <Divider />
-            <Link to='/work'>
+            <ParentLink to='/work'>
               <ListItem button>
                 <ListItemText primary={'WORK'}/>
               </ListItem>
-            </Link>  
+            </ParentLink>  
           </Fragment>
 
           <Fragment>
             <Divider />
-            <Link to='/contact-us'>
+            <ParentLink to='/contact-us'>
               <ListItem button>
                 <ListItemText primary={'CONTACT US'}/>
               </ListItem>
-            </Link>
+            </ParentLink>
           </Fragment>
        
         <ActionBox>
@@ -249,19 +284,22 @@ function NavigationBar({
   }
 
   return (
-    <NavbarContainer>
+    <NavbarBox>
+    
+      <NavbarContainer>
+
       <ParentLink to='/'>
         {
-          theming ? 
+          !isTop ? 
           <Logo 
-           width={60} 
-           src={LogoWhite} 
-           alt='21-logo' 
+          width={60} 
+          src={LogoWhite} 
+          alt='21-logo' 
           /> : 
           <Logo 
-           width={60} 
-           src={LogoImg} 
-           alt='216-logo' 
+          width={60} 
+          src={LogoImg} 
+          alt='216-logo' 
           />
         }
       </ParentLink>
@@ -269,16 +307,11 @@ function NavigationBar({
       <NavbarLeftBox>
         <NavbarLinkBox>
           <NavbarLink to='/'>HOME</NavbarLink>
-          <NavbarLink to='ourServices'>SERVICES</NavbarLink>
-          <NavbarLink to='/ourWork'>WORK</NavbarLink>
+          <NavbarLink to='services'>SERVICES</NavbarLink>
+          <NavbarLink to='/work'>WORK</NavbarLink>
           <NavbarLink to='/contact-us'>CONTACT US</NavbarLink>
         </NavbarLinkBox>
         <NavbarLeftBox>
-       
-          <CustomIOSwitch 
-            checked={theming} 
-            onChange={handleThemeChange}
-          />
           
           <ActionBox>
             <NavbarLink to='/216Health'>216 HEALTH</NavbarLink>
@@ -295,6 +328,9 @@ function NavigationBar({
         </NavbarLeftBox>
       </NavbarLeftBox>
     </NavbarContainer>
+    
+    </NavbarBox>
+    
   )
 }
 
