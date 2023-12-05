@@ -35,13 +35,13 @@ const AddressContainer = styled(Box)(({ theme }) => ({
 
 const CompanyInfoText = styled(Typography)(({ theme }) => ({
     fontSize: '13px',
-    color: Colors.White,
+    color: Colors.ScaleGrey,
     width: '200px',
     marginBottom: theme.spacing(1)
 }))
 
 const CompanyTitle = styled(Typography)(({ theme }) => ({
-    fontSize: '20px',
+    fontSize: '18px',
     color: Colors.White,
     marginBottom: theme.spacing(4)
 }))

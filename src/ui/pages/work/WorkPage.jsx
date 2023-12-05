@@ -24,6 +24,7 @@ import
     ScrollTrigger 
 from '@/common/components/ScrollTrigger';
 import Footer from '@/common/components/Footer/Footer';
+import WorkItem from './components/WorkItem';
 
 
 const WorkContainerDetails = styled(Box)(({ theme }) => ({
@@ -70,6 +71,26 @@ const WorkTitle = styled(Typography)(({ theme }) => ({
     }
 }))
 
+const WorkProjectContainer = styled(Box)(({ theme }) => ({
+    paddingBlock: theme.spacing(6),
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
+}))
+
+const WorkProjectTitle = styled(Typography)(({ theme }) => ({
+    color: Colors.AZTEC,
+    fontSize: '35px',
+    textAlign: 'center'
+}))
+
+const WorkProjectDescription = styled(Typography)(({ theme }) => ({
+    color: Colors.ScaleGrey,
+    fontSize: '16px',
+    textAlign: 'center',
+    maxWidth: '400px',
+    padding: theme.spacing(2, 0, 5, 0)
+}))
 function WorkPage(){
     return(
         <Fragment>
@@ -90,6 +111,22 @@ function WorkPage(){
                 
                 </WorkContainerDetails>
             </WorkContainer>
+
+            <WorkProjectContainer>
+                <WorkProjectTitle
+                    variant='h1'
+                    fontWeight={'bold'}
+                >
+                    Our Work
+                </WorkProjectTitle>
+
+                <WorkProjectDescription>
+                    This is the work we have done for a number of clients.
+                </WorkProjectDescription>
+
+                <WorkItem />
+            </WorkProjectContainer>
+
             <Footer />
         </Fragment>
         

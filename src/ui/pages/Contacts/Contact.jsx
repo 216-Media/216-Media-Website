@@ -76,7 +76,7 @@ const ContactFormDescription = styled(Typography)({
   fontSize: "16px",
   paddingTop: "33px",
   width: "490px",
-  color: Colors.SmokyGrape,
+  color: Colors.ScaleGrey,
 });
 
 function Contact() {

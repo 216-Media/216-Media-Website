@@ -59,15 +59,9 @@ const iconList = [
   },
 ];
 
-const SeparatorBox = styled(Box)(({ theme }) => ({
-  width: "100%",
-  height: "2px",
-  backgroundColor:
-    theme.palette.mode === "light" ? `${Colors.AZTEC}` : `${Colors.White}`,
-}));
 
 const SocialBox = styled(Box)(({ theme }) => ({
-  padding: theme.spacing(10, 5),
+  padding: theme.spacing(8, 5),
   backgroundColor: Colors.AZTEC,
   width: "100%",
   display: 'flex',
@@ -126,7 +120,6 @@ const CopyRight = styled(Typography)(({ theme }) => ({
 function Footer() {
   return (
     <Fragment>
-      <SeparatorBox></SeparatorBox>
 
       <SocialBox>
 

@@ -26,9 +26,9 @@ export const Colors = {
     HollywoodCerise: '#EB058C',
     SkyBlue: '#E2F0F9',
     BlackOpac: 'rgba(0, 0, 0, 0.6)',
-    ScaleGrey: 'hsl(215, 21%, 11%)',
+    ScaleGrey: '#a0a0b4',
     SmokyGrape: '#292929',
-    Concrete: '#f3f3f3'
+    Concrete: '#f3f3f3',
 }
 
 export const EventType = {

@@ -65,12 +65,9 @@ const CloseBox = styled(Box)(({ theme }) => ({
 
 
 
-
-
 const Close = styled(CloseIcon)(({ theme }) => ({
   cursor: 'pointer'
 }))
-
 
 
 const NavbarContainer = styled(Container)(({ theme }) => ({
@@ -116,11 +113,12 @@ function NavigationBar({
   setTheme,
   theming
 }) {
-  const NavbarBox = styled(Box)(({ theme }) => ({
 
+  const NavbarBox = styled(Box)(({ theme }) => ({
     position: 'fixed',
     zIndex: '2',
     backgroundColor: isTop ? Colors.White : 'transparent',
+    boxShadow: isTop ? `0px 4px 10px rgba(0, 0, 0, 0.1)` : '',
     height: '90px',
     overflow: 'hidden',
     top: 0,

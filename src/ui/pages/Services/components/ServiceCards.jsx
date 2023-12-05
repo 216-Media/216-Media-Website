@@ -47,12 +47,6 @@ const ServiceCardTitleContainer = styled('div')({
 const ServiceIcon = styled('img')(({ theme }) => ({
     width: '50px',
     marginBottom: theme.spacing(4),
-    '& svg path:nth-child(1)': {
-        fill: Colors.HollywoodCerise, 
-      },
-      '& svg path:nth-child(2)': {
-        fill: '#00FF00',
-      },
 }))
 
 const ServiceTile = styled(Paper)(({ theme }) => ({
@@ -82,10 +76,10 @@ function ServiceCards(){
     const services = [
         { id: 1, title: 'Web Development', icon: WebDev, description: 'Building responsive stunning websites' },
         { id: 2, title: 'Design', icon: Vector, description: 'Crafting awesome design layouts' },
-        { id: 3, title: 'Trend Insight Strategy', icon: Strategy, description: 'Creating innovative mobile applications' },
-        { id: 4, title: 'Branding', icon: Branding, description: 'Driving growth through digital strategies' }, 
-        { id: 4, title: 'Marketing', icon: Marketing, description: 'Driving growth through digital strategies' },
-        { id: 4, title: 'Interior Design', icon: Interior, description: 'Driving growth through digital strategies' }, 
+        { id: 3, title: 'Trend Insight Strategy', icon: Strategy, description: 'Driving growth through digital strategies' },
+        { id: 4, title: 'Branding', icon: Branding, description: 'Unique brand identity that resonates with your audience' }, 
+        { id: 4, title: 'Marketing', icon: Marketing, description: 'Implementing targeted strategies to elevate your brand visibility' },
+        { id: 4, title: 'Interior Design', icon: Interior, description: 'Creating functional and aesthetically pleasing interior spaces that harmonize style' }, 
     ];
 
     return(
@@ -98,10 +92,9 @@ function ServiceCards(){
                 {services.map((service) => (
                     <Grid item xs={12} sm={6} md={3} key={service.id}>
                         <ServiceTile
-                            elevation={1}
+                            elevation={2}
                         >
                             <ServiceIcon src={service.icon} />
-
 
                             <ServiceCardTitleContainer>
                                 <ServiceCardTitle

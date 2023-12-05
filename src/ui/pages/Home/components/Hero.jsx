@@ -39,7 +39,7 @@ const HeroContainer = styled(Container)(({ theme }) => ({
 const Title = styled(Typography)(({ theme }) => ({
     fontSize: '64px',
     color: `${Colors.White}`,
-    textAlign: 'left',
+    textAlign: 'center',
     maxWidth: '800px',
     margin: theme.spacing(9, 0, 4, 0),
     [theme.breakpoints.down('md')]: {

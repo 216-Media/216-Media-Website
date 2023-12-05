@@ -66,6 +66,10 @@ const TypeWriterComponent = styled(Typography)(({ theme }) => ({
     color: theme.palette.mode === 'light' ? `${Colors.AZTEC}` : `${Colors.White}`,
 }))
 
+const NavigateButtonLink = styled(Link)({
+    textDecoration: 'none'
+})
+
 function Services(){
 
     return(
@@ -91,7 +95,7 @@ function Services(){
                     />
                 </TypeWriterComponent>
                 
-                <Link to='/'>
+                <NavigateButtonLink to='/services'>
                     <CustomButton 
                         arrowDirection={<EastIcon />} 
                         buttonText={
@@ -99,7 +103,7 @@ function Services(){
                         }
                         animationDirection={ArrowRightAnimation}
                 />
-                </Link>
+                </NavigateButtonLink>
                 
                 </TitleContainer>
             </ServiceContainer>

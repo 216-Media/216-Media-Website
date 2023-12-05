@@ -13,7 +13,7 @@ import{
 } from 'react-router-dom';
 
 const QuickLinkTitle = styled(Typography)(({ theme }) => ({
-    fontSize: '20px',
+    fontSize: '18px',
     color: Colors.White,
     marginBottom: theme.spacing(4)
 }))
@@ -24,7 +24,7 @@ const QuickLinkContainer = styled(Box)({
 })
 
 const ActualLink = styled(Link)(({ theme }) => ({
-    color: Colors.Grey,
+    color: Colors.ScaleGrey,
     textDecoration: 'none',
     marginBottom: theme.spacing(1)
 }))

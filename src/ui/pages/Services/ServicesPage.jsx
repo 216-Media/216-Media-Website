@@ -76,7 +76,10 @@ const ServicesTitle = styled(Typography)(({ theme }) => ({
 }))
 
 const ServiceOfferContainer = styled(Box)(({ theme }) => ({
-    paddingBlock: theme.spacing(6)
+    paddingBlock: theme.spacing(6),
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
 }))
 
 const OfferTitle = styled(Typography)(({ theme }) => ({
@@ -86,10 +89,11 @@ const OfferTitle = styled(Typography)(({ theme }) => ({
 }))
 
 const OfferDescription = styled(Typography)(({ theme }) => ({
-    color: Colors.SmokyGrape,
-    fontSize: '18px',
+    color: Colors.ScaleGrey,
+    fontSize: '16px',
     textAlign: 'center',
-    paddingTop: theme.spacing(2)
+    maxWidth: '400px',
+    padding: theme.spacing(2, 0, 5, 0)
 }))
 
 function ServicesPage(){
@@ -122,7 +126,7 @@ function ServicesPage(){
 
                 <OfferDescription>
                     We offer a wide range of Services to 
-                    our clients
+                    our clients and make sure their happy.
                 </OfferDescription>
                 <ServiceCards />
             </ServiceOfferContainer>
