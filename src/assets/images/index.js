@@ -25,6 +25,10 @@ import Banner from '@/assets/images/banner.png'
 import HomeImg from '@/assets/images/home_img.jpg';
 import ContactUsImg from '@/assets/images/contact_us_img.jpg';
 import ServiceImg from '@/assets/images/service_img.jpg';
+import HealthImg from '@/assets/images/216_health_img.jpg';
+import WorkImg from '@/assets/images/work_img.jpg';
+import LandingImg from '@/assets/images/landing_img.jpg';
+import SecondLandingImg from '@/assets/images/landing_img2.jpg';
 
 export {
     RMA_brand_car,
@@ -34,8 +38,12 @@ export {
     ContactUsImg,
     Coida,
     ROA_brand_pen,
+    LandingImg,
+    SecondLandingImg,
     Notepads,
+    HealthImg,
     ROA_flags,
+    WorkImg,
     ROA_business_card,
     Saja_bagpack,
     Saja_logo,

@@ -268,7 +268,7 @@ function NavigationBar({
           </Fragment>
        
         <ActionBox>
-          <NavbarLink to='/216Health'>216 HEALTH</NavbarLink>
+          <NavbarLink to='/216-health'>216 HEALTH</NavbarLink>
           <Logo width={30} src={healthImg} alt='216-health' />
         </ActionBox>
       </List>
@@ -307,14 +307,14 @@ function NavigationBar({
       <NavbarLeftBox>
         <NavbarLinkBox>
           <NavbarLink to='/'>HOME</NavbarLink>
-          <NavbarLink to='services'>SERVICES</NavbarLink>
+          <NavbarLink to='/services'>SERVICES</NavbarLink>
           <NavbarLink to='/work'>WORK</NavbarLink>
           <NavbarLink to='/contact-us'>CONTACT US</NavbarLink>
         </NavbarLinkBox>
         <NavbarLeftBox>
           
           <ActionBox>
-            <NavbarLink to='/216Health'>216 HEALTH</NavbarLink>
+            <NavbarLink to='/216-health'>216 HEALTH</NavbarLink>
             <Logo width={30} src={healthImg} alt='216-health' />
           </ActionBox>
           <HamIcon onClick={toggleDrawer('top', true)}/>

@@ -23,12 +23,14 @@ import {
 import 
     ScrollTrigger 
 from '@/common/components/ScrollTrigger';
+import Footer from '@/common/components/Footer/Footer';
 
 
 const WorkContainerDetails = styled(Box)(({ theme }) => ({
     display: 'flex',
     justifyContent: 'center',
     flexDirection: 'column',
+    alignItems: 'center'
 }))
 
 const WorkContainer = styled(Box)(({ theme }) => ({
@@ -88,7 +90,7 @@ function WorkPage(){
                 
                 </WorkContainerDetails>
             </WorkContainer>
-        
+            <Footer />
         </Fragment>
         
     )

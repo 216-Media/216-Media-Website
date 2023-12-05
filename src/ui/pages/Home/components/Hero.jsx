@@ -17,6 +17,14 @@ import
     ScrollTrigger 
 from '@/common/components/ScrollTrigger';
 
+import{
+    LandingImg
+}from '@/assets/images';
+
+import{
+    SecondLandingImg
+} from '@/assets/images'
+
 const HeroContainer = styled(Container)(({ theme }) => ({
     display: 'flex',
     justifyContent: 'center',
@@ -31,7 +39,7 @@ const HeroContainer = styled(Container)(({ theme }) => ({
 const Title = styled(Typography)(({ theme }) => ({
     fontSize: '64px',
     color: `${Colors.White}`,
-    textAlign: 'center',
+    textAlign: 'left',
     maxWidth: '800px',
     margin: theme.spacing(9, 0, 4, 0),
     [theme.breakpoints.down('md')]: {
@@ -55,9 +63,9 @@ const Overlay = styled('div')({
 const HeroBox = styled(Box)(({ theme }) => ({
     position: 'relative',
     backgroundColor: Colors.SkyBlue,
-    backgroundImage: `url(${HomeImg})`,
+    backgroundImage: `url(${SecondLandingImg})`,
     backgroundSize: 'cover',
-    backgroundPosition: '100% 40%', 
+    backgroundPosition: '100% 50%', 
     zIndex: -1,
     height: '100vh'
 }))

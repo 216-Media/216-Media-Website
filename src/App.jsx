@@ -40,7 +40,12 @@ import Contact from "@/ui/pages/Contacts/Contact";
 
 
 import WorkPage from "./ui/pages/work/WorkPage";
+
 import Services from "./ui/pages/Home/components/Services";
+
+import Health from '@/ui/pages/216Health/Health';
+
+import ServicesPage from "@/ui/pages/Services/ServicesPage";
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -64,6 +69,12 @@ function App() {
               </Box>
             }
           />
+          
+          <Route 
+            path='/services'
+            element={<ServicesPage />}
+          />
+
           <Route 
             path='/work'
             element={<WorkPage />}
@@ -71,6 +82,11 @@ function App() {
           <Route 
            path="/contact-us" 
            element={<Contact />} 
+          />
+
+          <Route 
+           path="/216-health" 
+           element={<Health />} 
           />
         </Routes>
       </Router>

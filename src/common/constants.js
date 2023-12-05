@@ -27,7 +27,7 @@ export const Colors = {
     SkyBlue: '#E2F0F9',
     BlackOpac: 'rgba(0, 0, 0, 0.6)',
     ScaleGrey: 'hsl(215, 21%, 11%)',
-    SmokyGrape: '#A0A0B4',
+    SmokyGrape: '#292929',
     Concrete: '#f3f3f3'
 }
 
@@ -98,6 +98,13 @@ export const wheelAnimation = keyframes`
         top: 40px;
     }
 `;
+
+export const bouncingLoader = keyframes`
+    to {
+        opacity: 0.1;
+        transform: translateY(-16px);
+    }
+`
 
 export const ArrowDownAnimation = keyframes`
 0% {
