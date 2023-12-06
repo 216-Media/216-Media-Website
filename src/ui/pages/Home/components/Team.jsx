@@ -77,8 +77,7 @@ const TeamLink = styled(Typography)(({ theme }) => ({
 
 const CardGridLayout = styled(Grid)(({ theme }) => ({
     marginBlock: theme.spacing(10),
-    display: 'flex',
-    justifyContent: 'center'
+   
 }))
 
 
@@ -105,7 +104,11 @@ function Team(){
                     </TeamLinkBox>
                 </HeaderContainer>
 
-                <CardGridLayout container spacing={12}>
+                <CardGridLayout 
+                    container 
+                    spacing={12}
+                    justifyContent={'center'}
+                >
                     {TeamMemberDetails.map((profile, index) => (
                         <Grid 
                          item 

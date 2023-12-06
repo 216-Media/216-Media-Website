@@ -23,8 +23,18 @@ import {
 import 
     ScrollTrigger 
 from '@/common/components/ScrollTrigger';
-import Footer from '@/common/components/Footer/Footer';
-import WorkItem from './components/WorkItem';
+
+import 
+    Footer 
+from '@/common/components/Footer/Footer';
+
+import 
+    WorkItem 
+from './components/WorkItem';
+
+import 
+    GetStarted 
+from '@/common/components/GetStarted';
 
 
 const WorkContainerDetails = styled(Box)(({ theme }) => ({
@@ -86,7 +96,7 @@ const WorkProjectTitle = styled(Typography)(({ theme }) => ({
 
 const WorkProjectDescription = styled(Typography)(({ theme }) => ({
     color: Colors.ScaleGrey,
-    fontSize: '16px',
+    fontSize: '18px',
     textAlign: 'center',
     maxWidth: '400px',
     padding: theme.spacing(2, 0, 5, 0)
@@ -126,6 +136,8 @@ function WorkPage(){
 
                 <WorkItem />
             </WorkProjectContainer>
+
+            <GetStarted />
 
             <Footer />
         </Fragment>

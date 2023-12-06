@@ -29,6 +29,8 @@ import HealthImg from '@/assets/images/216_health_img.jpg';
 import WorkImg from '@/assets/images/work_img.jpg';
 import LandingImg from '@/assets/images/landing_img.jpg';
 import SecondLandingImg from '@/assets/images/landing_img2.jpg';
+import GetStartedImg from '@/assets/images/get_started_img.jpg';
+
 
 export {
     RMA_brand_car,
@@ -38,6 +40,7 @@ export {
     ContactUsImg,
     Coida,
     ROA_brand_pen,
+    GetStartedImg,
     LandingImg,
     SecondLandingImg,
     Notepads,

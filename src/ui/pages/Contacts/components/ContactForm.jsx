@@ -90,6 +90,8 @@ function ContactForm(){
 
                 <CustomButton 
                     buttonText={'SEND MESSAGE'}
+                    textColor={Colors.AZTEC}
+                    borderColor={Colors.AZTEC}
                 />
             </form>
         </ContactFormContainer>

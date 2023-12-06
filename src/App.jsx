@@ -46,6 +46,7 @@ import Services from "./ui/pages/Home/components/Services";
 import Health from '@/ui/pages/216Health/Health';
 
 import ServicesPage from "@/ui/pages/Services/ServicesPage";
+import ScrollTop from "./common/helpers/HOC/ScrollTop";
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -53,6 +54,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Router>
+        <ScrollTop />
         <Routes>
           <Route
             path="/"

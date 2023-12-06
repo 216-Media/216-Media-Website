@@ -19,9 +19,17 @@ import{
     useMediaQuery
 } from '@mui/material';
 
+import{
+    Link
+} from 'react-router-dom'
+
 import { 
     Fragment 
 } from 'react';
+
+import 
+    ArrowOutwardIcon 
+from '@mui/icons-material/ArrowOutward';
 
 const WorkItemContainer = styled(Container)(({ theme }) => ({
     display: 'flex',
@@ -56,9 +64,6 @@ const WorkItemClient = styled(Typography)(({ theme }) => ({
     fontSize: '33px',
     color: Colors.AZTEC,
     width: '90%',
-    // [theme.breakpoints.down('md')]: {
-    //     width:
-    // }
 }))
 
 const WorkItemDescription = styled(Typography)(({theme}) => ({
@@ -69,10 +74,13 @@ const WorkItemDescription = styled(Typography)(({theme}) => ({
     paddingBottom: theme.spacing(2)
 }))
 
+const ButtonNavigator = styled(Link)({
+    textDecoration: 'none'
+})
+
 function WorkItem(){
 
-    const isSmallerScreen = useMediaQuery((theme) => theme.breakpoints.down('md'));
-    const isLargerScreen = useMediaQuery((theme) => theme.breakpoints.up('lg')); 
+    const isSmallerScreen = useMediaQuery((theme) => theme.breakpoints.down('md')); 
 
     const workItems = [
         {
@@ -80,28 +88,32 @@ function WorkItem(){
             workTitle: 'Brand Refresh', 
             workImage: ROA_flags, 
             client: 'Racehorse Owners Association (ROA)', 
-            description: 'Our team  aimed to better engage racehorse owners and enthusiasts, aligning ROA with current industry trends while preserving its esteemed heritage.'
+            description: 'Our team  aimed to better engage racehorse owners and enthusiasts, aligning ROA with current industry trends while preserving its esteemed heritage.',
+            link: 'https://racingassociation.co.za/'
         },
         {
             id: 2,
             workTitle: 'Brand Refresh',
             workImage: ROA_flags,
             client: 'Blank Page Production (BPP)',
-            description: "Our team dedicated extensive efforts towards revitalizing and modernizing BPP's visual identity and messaging elements"
+            description: "Our team dedicated extensive efforts towards revitalizing and modernizing BPP's visual identity and messaging elements",
+            link: ''
         },
         {
             id: 3,
             workTitle: 'Interior Design',
             workImage: ROA_flags,
             client: 'FNB Stadium',
-            description: "216 Media collaborated with FNB Stadium to reimagine and revamp the interior spaces within their premises."
+            description: "216 Media collaborated with FNB Stadium to reimagine and revamp the interior spaces within their premises.",
+            link: ''
         },
         {
             id: 4,
             workTitle: 'Vehicle Brand',
             workImage: RMA_brand_car,
             client: 'Rand Mutual Assurance (RMA)',
-            description: "We spearheaded impactful vehicle branding initiatives, ensuring RMA's and their partners message reached diverse audiences."
+            description: "We spearheaded impactful vehicle branding initiatives, ensuring RMA's and their partners message reached diverse audiences.",
+            link: 'https://www.randmutual.co.za/'
         }
     ];
 
@@ -131,7 +143,19 @@ function WorkItem(){
                             {work.description}
                         </WorkItemDescription>
 
-                        <CustomButton buttonText={'View Portfolio'}/>
+                        <ButtonNavigator
+                         target="_blank" 
+                         rel="noopener noreferrer"
+                         to={work.link}
+                        >
+                            <CustomButton 
+                                buttonText={'View Portfolio'}
+                                textColor={Colors.AZTEC}
+                                borderColor={Colors.AZTEC}
+                                arrowDirection={<ArrowOutwardIcon />}
+                            />
+                        </ButtonNavigator>
+                        
                     </WorkItemDetailsContainer>
                 </WorkItemContainer>
             ))}

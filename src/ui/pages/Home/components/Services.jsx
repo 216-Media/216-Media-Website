@@ -29,6 +29,9 @@ import {
     Link
 } from 'react-router-dom';
 
+import 
+    ArrowOutwardIcon 
+from '@mui/icons-material/ArrowOutward';
 
 import 
     EastIcon 
@@ -96,12 +99,15 @@ function Services(){
                 </TypeWriterComponent>
                 
                 <NavigateButtonLink to='/services'>
-                    <CustomButton 
-                        arrowDirection={<EastIcon />} 
+                    <CustomButton
+                        textColor={Colors.AZTEC}
+                        borderColor={Colors.AZTEC}
+                        backgroundColor={Colors.White}
+                        arrowDirection={<ArrowOutwardIcon />} 
                         buttonText={
                         'LEARN MORE'
                         }
-                        animationDirection={ArrowRightAnimation}
+                        
                 />
                 </NavigateButtonLink>
                 

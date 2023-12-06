@@ -141,7 +141,6 @@ function Footer() {
                 </a>
               ))}
             </SocialMedia>
-              
           </Box>
 
           <FooterQuickLink>

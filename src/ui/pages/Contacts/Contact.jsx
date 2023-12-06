@@ -10,12 +10,21 @@ import { ArrowDownAnimation, Colors } from "@/common/constants";
 
 import NavigationBar from "@/common/components/NavigationBar";
 
-import { ContactUsImg } from "@/assets/images";
+import { 
+  ContactUsImg 
+} from "@/assets/images";
 
-import ScrollTrigger from "@/common/components/ScrollTrigger";
+import 
+  ScrollTrigger 
+from "@/common/components/ScrollTrigger";
 
-import ContactForm from "@/ui/pages/Contacts/components/ContactForm";
-import Footer from "@/common/components/Footer/Footer";
+import 
+  ContactForm 
+from "@/ui/pages/Contacts/components/ContactForm";
+
+import 
+  Footer 
+from "@/common/components/Footer/Footer";
 
 const Overlay = styled("div")({
   position: "absolute",

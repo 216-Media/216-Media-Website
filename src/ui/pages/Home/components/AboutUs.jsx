@@ -76,6 +76,9 @@ function AboutUs(){
              arrowDirection={<EastIcon />} 
              buttonText={'LEARN MORE'}
              animationDirection={ArrowRightAnimation}
+             textColor={Colors.AZTEC}
+             borderColor={Colors.AZTEC}
+             backgroundColor={Colors.White}
             />
         </AboutContainer>
     )

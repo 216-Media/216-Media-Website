@@ -32,6 +32,10 @@ import
     ServiceCards 
 from '@/ui/pages/Services/components/ServiceCards';
 
+import 
+    GetStarted 
+from '@/common/components/GetStarted';
+
 const ServicesContainer = styled(Box)(({ theme }) => ({
     backgroundImage: `url(${WorkImg})`,
     backgroundSize: 'cover',
@@ -90,7 +94,7 @@ const OfferTitle = styled(Typography)(({ theme }) => ({
 
 const OfferDescription = styled(Typography)(({ theme }) => ({
     color: Colors.ScaleGrey,
-    fontSize: '16px',
+    fontSize: '18px',
     textAlign: 'center',
     maxWidth: '400px',
     padding: theme.spacing(2, 0, 5, 0)
@@ -130,6 +134,8 @@ function ServicesPage(){
                 </OfferDescription>
                 <ServiceCards />
             </ServiceOfferContainer>
+
+            <GetStarted />
             <Footer />
         </Fragment>
     )

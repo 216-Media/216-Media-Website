@@ -62,10 +62,10 @@ const Overlay = styled('div')({
 
 const HeroBox = styled(Box)(({ theme }) => ({
     position: 'relative',
-    backgroundColor: Colors.SkyBlue,
+    
     backgroundImage: `url(${SecondLandingImg})`,
     backgroundSize: 'cover',
-    backgroundPosition: '100% 50%', 
+    backgroundPosition: 'center center', 
     zIndex: -1,
     height: '100vh'
 }))
