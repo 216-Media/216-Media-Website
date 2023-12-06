@@ -55,7 +55,12 @@ const HealthContainerDetails = styled(Box)(({ theme }) => ({
     justifyContent: 'center',
     flexDirection: 'column',
     alignItems: 'center',
-    gap: theme.spacing(6)
+    gap: theme.spacing(6),
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    zIndex: 2,
 }))
 
 const HealthText = styled(Typography)(({ theme }) => ({
@@ -77,19 +82,20 @@ function Health(){
             <NavigationBar />
             <HealthContainer>
                 <Overlay />
-                <Box position='relative' zIndex='1'>
+                
                     <HealthContainerDetails>
-                        <HealthText
-                            variant='h1'
-                            fontWeight={'bold'}
-                         >
-                            Coming Soon.
-                        </HealthText>
+                        <Box position='relative' zIndex='1'>
+                            <HealthText
+                                variant='h1'
+                                fontWeight={'bold'}
+                            >
+                                Coming Soon.
+                            </HealthText>
 
-                        <CustomLoader />
-
+                            <CustomLoader />
+                        </Box>
                     </HealthContainerDetails>
-                </Box>
+                
             </HealthContainer>
         </Fragment>
     )
