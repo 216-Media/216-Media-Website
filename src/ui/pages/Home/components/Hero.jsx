@@ -29,6 +29,11 @@ const HeroContainer = styled(Container)(({ theme }) => ({
     display: 'flex',
     justifyContent: 'center',
     padding: theme.spacing(16, 0),
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    zIndex: 2,
     [theme.breakpoints.down('sm')]: {
         flexDirection: 'column',
         alignItems: 'center',

@@ -103,7 +103,7 @@ const FooterSocialTitle = styled(Typography)({
 const FooterQuickLink = styled(Box)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'space-around',
-  width: '75%',
+  width: '80%',
   [theme.breakpoints.down('md')]: {
     flexDirection: 'column',
     marginTop: theme.spacing(4)

@@ -62,7 +62,12 @@ const ServicesContainerDetails = styled(Box)(({ theme }) => ({
     display: 'flex',
     justifyContent: 'center',
     flexDirection: 'column',
-    alignItems: 'center'
+    alignItems: 'center',
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    zIndex: 2,
 }))
 
 const ServicesTitle = styled(Typography)(({ theme }) => ({
@@ -112,7 +117,7 @@ function ServicesPage(){
                          variant='h1'
                          fontWeight={'bold'}
                         >
-                            Making Designs To Empower your Business
+                            Making Designs That Empower your Business
                         </ServicesTitle>
 
                         <ScrollTrigger />
