@@ -18,12 +18,11 @@ import
 from '@/common/components/ScrollTrigger';
 
 import{
-    LandingImg
+    LandingImg,
+    LandingBubbleImg,
+    LandingSpiralImg
 }from '@/assets/images';
 
-import{
-    SecondLandingImg
-} from '@/assets/images'
 
 const HeroContainer = styled(Container)(({ theme }) => ({
     display: 'flex',
@@ -67,8 +66,7 @@ const Overlay = styled('div')({
 
 const HeroBox = styled(Box)(({ theme }) => ({
     position: 'relative',
-    
-    backgroundImage: `url(${SecondLandingImg})`,
+    backgroundImage: `url(${LandingBubbleImg})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center center', 
     zIndex: -1,

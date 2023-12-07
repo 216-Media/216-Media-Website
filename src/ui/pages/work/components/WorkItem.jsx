@@ -1,11 +1,9 @@
 import{
-    ROA_flags,
-    RMA_brand_car
+    RMA_brand_car,
+    FNBInteriorImg,
+    ROALetterImg,
+    BlankPageCard
 } from '@/assets/images';
-
-import 
-    CustomButton 
-from '@/common/components/CustomButton';
 
 import { 
     Colors 
@@ -19,17 +17,11 @@ import{
     useMediaQuery
 } from '@mui/material';
 
-import{
-    Link
-} from 'react-router-dom'
-
 import { 
     Fragment 
 } from 'react';
 
-import 
-    ArrowOutwardIcon 
-from '@mui/icons-material/ArrowOutward';
+
 
 const WorkItemContainer = styled(Container)(({ theme }) => ({
     display: 'flex',
@@ -50,7 +42,8 @@ const WorkItemDetailsContainer = styled(Box)(({ theme }) => ({
 }))
 
 const WorkItemProfile = styled('img')({
-    width: '400px'
+    width: '400px', 
+    objectFit: 'contain'
 })
 
 const WorkTitleText = styled(Typography)(({ theme }) => ({
@@ -74,9 +67,6 @@ const WorkItemDescription = styled(Typography)(({theme}) => ({
     paddingBottom: theme.spacing(2)
 }))
 
-const ButtonNavigator = styled(Link)({
-    textDecoration: 'none'
-})
 
 function WorkItem(){
 
@@ -86,34 +76,30 @@ function WorkItem(){
         {
             id: 1, 
             workTitle: 'Brand Refresh', 
-            workImage: ROA_flags, 
+            workImage: ROALetterImg, 
             client: 'Racehorse Owners Association (ROA)', 
-            description: 'Our team  aimed to better engage racehorse owners and enthusiasts, aligning ROA with current industry trends while preserving its esteemed heritage.',
-            link: 'https://racingassociation.co.za/'
+            description: 'Our team  aimed to better engage racehorse owners and enthusiasts, aligning ROA with current industry trends while preserving its esteemed heritage.'
         },
         {
             id: 2,
             workTitle: 'Brand Refresh',
-            workImage: ROA_flags,
+            workImage: BlankPageCard,
             client: 'Blank Page Production (BPP)',
-            description: "Our team dedicated extensive efforts towards revitalizing and modernizing BPP's visual identity and messaging elements",
-            link: ''
+            description: "Our team dedicated extensive efforts towards revitalizing and modernizing BPP's visual identity and messaging elements."
         },
         {
             id: 3,
             workTitle: 'Interior Design',
-            workImage: ROA_flags,
+            workImage: FNBInteriorImg,
             client: 'FNB Stadium',
-            description: "216 Media collaborated with FNB Stadium to reimagine and revamp the interior spaces within their premises.",
-            link: ''
+            description: "216 Media collaborated with FNB Stadium to reimagine and revamp the interior spaces within their premises."
         },
         {
             id: 4,
             workTitle: 'Vehicle Brand',
             workImage: RMA_brand_car,
             client: 'Rand Mutual Assurance (RMA)',
-            description: "We spearheaded impactful vehicle branding initiatives, ensuring RMA's and their partners message reached diverse audiences.",
-            link: 'https://www.randmutual.co.za/'
+            description: "We spearheaded impactful vehicle branding initiatives, ensuring RMA's and their partners message reached diverse audiences."
         }
     ];
 
@@ -143,18 +129,7 @@ function WorkItem(){
                             {work.description}
                         </WorkItemDescription>
 
-                        <ButtonNavigator
-                         target="_blank" 
-                         rel="noopener noreferrer"
-                         to={work.link}
-                        >
-                            <CustomButton 
-                                buttonText={'View Portfolio'}
-                                textColor={Colors.AZTEC}
-                                borderColor={Colors.AZTEC}
-                                arrowDirection={<ArrowOutwardIcon />}
-                            />
-                        </ButtonNavigator>
+                        
                         
                     </WorkItemDetailsContainer>
                 </WorkItemContainer>

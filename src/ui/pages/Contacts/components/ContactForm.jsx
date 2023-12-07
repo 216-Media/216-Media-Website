@@ -3,13 +3,20 @@ import {
 } from 'react';
 
 import{
+    useForm,
+    ValidationError
+} from '@formspree/react'
+
+import{
     styled,
     Box,
     Select,
     TextField,
     MenuItem,
     InputLabel,
-    FormControl
+    FormControl,
+    Alert,
+    Typography
 } from '@mui/material';
 
 import { 
@@ -19,6 +26,7 @@ import {
 import 
     CustomButton 
 from '@/common/components/CustomButton';
+import CustomLoader from '@/common/components/CustomLoader';
 
 const ContactFormContainer = styled(Box)(({ theme }) => ({
     padding: theme.spacing(2, 6),
@@ -51,49 +59,101 @@ function ContactForm(){
         setAreaOfInterest
     ] = useState('');
 
+    const [state, handleSubmit] = useForm('mpzgvqzw');
+    const [loading, setLoading] = useState(false);
+    const [formSubmitted, setFormSubmitted] = useState(false);
+
+    const submitForm = async (e) => {
+        e.preventDefault();
+        setLoading(true)
+        await handleSubmit(e)
+        setLoading(false);
+
+        if (state.succeeded) {
+            setFormSubmitted(true);
+        }
+    }
+
     return(
         <ContactFormContainer>
-            <form>
-                <Box>
-                    <ContactFormField 
-                        name='name'
-                        label='Name'
-                        variant='standard'
-                    />
-                    <ContactFormField
-                        name='email'
-                        variant='standard'
-                        label='email'
-                    />
-                </Box>
-                <FormControlField variant='standard'>
-                    <InputLabel>Area of Interest</InputLabel>
-                    <ContactFormSelect
-                        name='Area of Interest'
-                        value={areaOfInterest}
-                        label='Area of Interest'
-                        onChange={(e) => setAreaOfInterest(e.target.value)}
-                    >
-                        <MenuItem value={10}>Digital Marketing</MenuItem>
-                        <MenuItem value={20}>Branding</MenuItem>
-                        <MenuItem value={30}>Design</MenuItem>
-                        <MenuItem value={30}>Trend Insight Strategy</MenuItem>
-                    </ContactFormSelect>
-                
-                </FormControlField>
+            {
+                formSubmitted ? 
+                    <Alert severity='success'>
+                        Thank you for contacting us we will reach out to you soon.
+                    </Alert> 
+                 
+                : 
+                <form
+                    onSubmit={submitForm}
+                >
+                    <Box>
+                        <ContactFormField
+                            id='name'
+                            name='name'
+                            type='text'
+                            label='Name'
+                            variant='standard'
+                        />
+                        <ValidationError 
+                        prefix='Name' 
+                        field='name' 
+                        errors={state.errors} 
+                        />
+                        <ContactFormField
+                            id='email'
+                            name='email'
+                            variant='standard'
+                            label='Email'
+                            type='email'
+                        />
+                        <ValidationError 
+                        prefix='Email' 
+                        field='email' 
+                        errors={state.errors} 
+                        />
+                    </Box>
+                    <FormControlField variant='standard'>
+                        <InputLabel>Area of Interest</InputLabel>
+                        <ContactFormSelect
+                            id='Area of Interest'
+                            name='Area of Interest'
+                            value={areaOfInterest}
+                            label='Area of Interest'
+                            onChange={(e) => setAreaOfInterest(e.target.value)}
+                        >
+                            <MenuItem value={'Digital Marketing'}>Digital Marketing</MenuItem>
+                            <MenuItem value={'Branding'}>Branding</MenuItem>
+                            <MenuItem value={'Design'}>Design</MenuItem>
+                            <MenuItem value={'Interior Design'}>Interior Design</MenuItem>
+                            <MenuItem value={'Web Development'}>Web Development</MenuItem>
+                            <MenuItem value={'Trend Insight Strategy'}>Trend Insight Strategy</MenuItem>
+                        </ContactFormSelect>
+                    
+                    </FormControlField>
 
-                <ContactFormMessage
-                    name='message'
-                    label='message'
-                    variant='standard'
-                />
+                    <ContactFormMessage
+                        id='message'
+                        name='message'
+                        label='Message'
+                        variant='standard'
+                        multiline
+                        rows={4}
+                        type='text'
+                    />
 
-                <CustomButton 
-                    buttonText={'SEND MESSAGE'}
-                    textColor={Colors.AZTEC}
-                    borderColor={Colors.AZTEC}
-                />
-            </form>
+                    {
+                        loading ? <CustomLoader /> :
+                        <CustomButton 
+                            buttonText={'SEND MESSAGE'}
+                            textColor={Colors.AZTEC}
+                            borderColor={Colors.AZTEC}
+                            type={'submit'}
+                            disabled={state.submitting}
+                        />
+                    }
+                </form>
+            }
+            
         </ContactFormContainer>
     );
 }

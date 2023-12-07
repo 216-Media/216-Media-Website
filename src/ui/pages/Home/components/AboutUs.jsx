@@ -14,14 +14,15 @@ import
     CustomButton 
 from '@/common/components/CustomButton';
 
-
 import 
-    EastIcon 
-from '@mui/icons-material/East';
+    ArrowOutwardIcon 
+from '@mui/icons-material/ArrowOutward';
+
 
 import 
     DownArrowAnimation 
 from '@/common/components/DownArrowAnimation';
+import Values from './Values';
 
 
 
@@ -46,10 +47,10 @@ const Title = styled(Typography)(({ theme }) => ({
 }));
 
 const Description = styled(Typography)(({ theme }) => ({
-    color: theme.palette.mode === 'light' ? `${Colors.AZTEC}` : `${Colors.White}`,
+    color: `${Colors.AZTEC}`,
     fontWeight: '400',
     fontSize: '17px',
-    maxWidth: '585px',
+    maxWidth: '620px',
     margin: theme.spacing(4, 0)
 }));
 
@@ -62,20 +63,21 @@ function AboutUs(){
     return(
         <AboutContainer>
             <TitleContainer>
-                <Title>About Us</Title>
+                <Title>Who we are</Title>
                 <DownArrowAnimation />
             </TitleContainer>
             <Description>
                 216 Media is an independent, creative, events and communications agency.
                 At 216 Media, we are architects of unforgettable experiences and the 
-                creators of spectacular visual narratives. Our passion lies in seamlessly
-                blending the worlds of design and event management to craft unique and memorable
-                moments that leave a lasting impression
+                creators of spectacular visual narratives.
             </Description>
+
+
+            <Values />
+
             <CustomButton 
-             arrowDirection={<EastIcon />} 
+             arrowDirection={<ArrowOutwardIcon />} 
              buttonText={'LEARN MORE'}
-             animationDirection={ArrowRightAnimation}
              textColor={Colors.AZTEC}
              borderColor={Colors.AZTEC}
              backgroundColor={Colors.White}

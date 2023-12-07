@@ -52,11 +52,10 @@ export const linkObjTeam = [
 
 export const linkObjAbout = [
     'About us',
-    'Testimony',
 ];
 
 export const linkObjCompany = [
-    'Our Company',
+    'Vision and Mission',
 ]
 
 export const TeamItems = [

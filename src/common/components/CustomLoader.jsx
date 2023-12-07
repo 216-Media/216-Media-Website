@@ -21,15 +21,13 @@ const BouncingCircle = styled('div')({
     opacity: '1',
 
     animation: `${bouncingLoader} 0.6s infinite alternate`,
-    '&:nth-child(3)': {
+    '&:nth-of-type(3)': {
         animationDelay: '0.4s'
     },
-    '&:nth-child(2)': {
+    '&:nth-of-type(2)': {
         animationDelay: '0.2s'
     }
 })
-
-
 
 function CustomLoader(){
 

@@ -16,6 +16,8 @@ from "react-multi-carousel";
 
 import "react-multi-carousel/lib/styles.css";
 
+import Marquee from "react-fast-marquee";
+
 import {
     AfricanBank,
     AutoZone,
@@ -47,14 +49,23 @@ const Title = styled(Typography)(({ theme }) => ({
     textAlign: 'center'
 }))
 
+
+
 const SponsorImg = styled('img')({
-    width: '100px',
-    height: '100px',
-    objectFit: 'contain'
+    width: '130px',
+    height: '130px',
+    objectFit: 'contain',
+    marginInline: '40px'
 })
 
 const SponsorContainer = styled(Box)(({ theme }) => ({
     padding: theme.spacing(6, 0),
+}))
+
+const MarqueeContainer = styled(Marquee)(({ theme }) => ({
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between'
 }))
 
 
@@ -62,16 +73,19 @@ function Sponsors(){
     return(
         <SponsorContainer>
             <Title>Trusted by</Title>
-            <Carousel
-                responsive={
-                    CarouselResponsive
-                }
+            <MarqueeContainer
+                pauseOnHover={true}
             >
-                {sponsors.map((sponsor, index) => (
-                    <SponsorImg key={index} src={sponsor}/>
-                ))}
-                
-            </Carousel>
+                <SponsorImg src={AfricanBank}/>
+                <SponsorImg src={AutoZone}/>
+                <SponsorImg src={Eswatini}/>
+                <SponsorImg src={FNB}/>
+                <SponsorImg src={Hollard}/>
+                <SponsorImg src={Polokwane}/>
+                <SponsorImg src={RMA}/>
+                <SponsorImg src={Sena}/>
+                <SponsorImg src={Vodacom}/>
+            </MarqueeContainer>
         </SponsorContainer>
     )
 }

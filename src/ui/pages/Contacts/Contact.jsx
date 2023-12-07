@@ -3,7 +3,8 @@ import { Fragment } from "react";
 import { 
   styled, 
   Box, 
-  Typography 
+  Typography,
+  Container
 } from "@mui/material";
 
 import { ArrowDownAnimation, Colors } from "@/common/constants";
@@ -25,6 +26,7 @@ from "@/ui/pages/Contacts/components/ContactForm";
 import 
   Footer 
 from "@/common/components/Footer/Footer";
+import GoogleMapApi from "./components/GoogleMap";
 
 const Overlay = styled("div")({
   position: "absolute",
@@ -93,6 +95,16 @@ const ContactFormDescription = styled(Typography)({
   color: Colors.ScaleGrey,
 });
 
+const ContactInfo = styled(Container)(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'flex-end',
+  gap: theme.spacing(2),
+  [theme.breakpoints.down('md')]: {
+    flexDirection: 'column',
+  }
+
+}))
+
 function Contact() {
   return (
     <Fragment>
@@ -116,13 +128,16 @@ function Contact() {
           HAVE A PROJECT?
         </ContactFormTitle>
         <ContactFormDescription>
-          Please complete the below form to contact us and we’ll make sure the
-          right team member gets back to you
+          Please contact us by completing the form below and we’ll make sure the
+          right team member gets back to you.
         </ContactFormDescription>
 
-        <ContactForm />
-      </ContactBoxForm>
 
+        <ContactInfo>
+          <ContactForm />
+          <GoogleMapApi />
+        </ContactInfo>
+      </ContactBoxForm>
       <Footer />
     </Fragment>
   );

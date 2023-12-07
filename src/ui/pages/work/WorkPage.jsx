@@ -13,7 +13,7 @@ import {
 } from 'react';
 
 import{
-    ServiceImg
+    ServiceImg,
 } from '@/assets/images';
 
 import { 

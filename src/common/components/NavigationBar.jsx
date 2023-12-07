@@ -116,7 +116,7 @@ function NavigationBar({
 
   const NavbarBox = styled(Box)(({ theme }) => ({
     position: 'fixed',
-    zIndex: '2',
+    zIndex: '3',
     backgroundColor: isTop ? Colors.White : 'transparent',
     boxShadow: isTop ? `0px 4px 10px rgba(0, 0, 0, 0.1)` : '',
     height: '90px',
@@ -258,6 +258,15 @@ function NavigationBar({
 
           <Fragment>
             <Divider />
+            <ParentLink to='/about-us'>
+              <ListItem button>
+                <ListItemText primary={'ABOUT US'}/>
+              </ListItem>
+            </ParentLink>  
+          </Fragment>
+
+          <Fragment>
+            <Divider />
             <ParentLink to='/contact-us'>
               <ListItem button>
                 <ListItemText primary={'CONTACT US'}/>
@@ -287,19 +296,13 @@ function NavigationBar({
       <NavbarContainer>
 
       <ParentLink to='/'>
-        {
-          !isTop ? 
-          <Logo 
-          width={60} 
-          src={LogoWhite} 
-          alt='21-logo' 
-          /> : 
+        
           <Logo 
           width={60} 
           src={LogoImg} 
           alt='216-logo' 
           />
-        }
+        
       </ParentLink>
       
       <NavbarLeftBox>
@@ -307,6 +310,7 @@ function NavigationBar({
           <NavbarLink to='/'>HOME</NavbarLink>
           <NavbarLink to='/services'>SERVICES</NavbarLink>
           <NavbarLink to='/work'>WORK</NavbarLink>
+          <NavbarLink to='/about-us'>ABOUT US</NavbarLink>
           <NavbarLink to='/contact-us'>CONTACT US</NavbarLink>
         </NavbarLinkBox>
         <NavbarLeftBox>

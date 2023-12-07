@@ -127,11 +127,11 @@ function Footer() {
           <Box>
             <FooterImg 
               width={60} 
-              src={FooterLogo} 
+              src={FooterLogo}
               alt='footer-logo'
             />
             <FooterSocialTitle>
-                216 Media Everything Media & Marketing
+              216 Media Everything Media & Marketing
             </FooterSocialTitle>
 
             <SocialMedia>
@@ -145,16 +145,11 @@ function Footer() {
 
           <FooterQuickLink>
               <QuickLink 
-                linkObj={linkObjTeam} 
-                title={'Community'}
-              />
-
-              <QuickLink 
                 linkObj={linkObjAbout} 
                 title={'About Us'}
               />
 
-              <QuickLink 
+              <QuickLink
                 linkObj={linkObjCompany} 
                 title={'Our Company'}
               />

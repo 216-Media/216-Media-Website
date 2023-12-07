@@ -7,9 +7,6 @@ import{
     styled
 } from '@mui/material';
 
-import { 
-    Colors 
-} from '@/common/constants';
 
 
 function CustomButton({ 
@@ -18,7 +15,8 @@ function CustomButton({
     animationDirection,
     borderColor,
     textColor,
-    backgroundColor
+    backgroundColor,
+    type
 }){
 
     const CustomButton = styled(Button)(({ theme }) => ({
@@ -43,7 +41,9 @@ function CustomButton({
     }))
 
     return (
-        <CustomButton>
+        <CustomButton
+            type={type}
+        >
             {buttonText}
             {arrowDirection}
         </CustomButton>

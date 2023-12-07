@@ -30,7 +30,12 @@ import WorkImg from '@/assets/images/work_img.jpg';
 import LandingImg from '@/assets/images/landing_img.jpg';
 import SecondLandingImg from '@/assets/images/landing_img2.jpg';
 import GetStartedImg from '@/assets/images/get_started_img.jpg';
-
+import LandingBubbleImg from '@/assets/images/Landing_bubble_img.jpg';
+import LandingSpiralImg from '@/assets/images/Landing_spiral_img.jpg';
+import FNBInteriorImg from '@/assets/images/FNB_interior.png';
+import BlankPageCard from '@/assets/images/Blank_page_cards.jpeg';
+import ROALetterImg from '@/assets/images/ROA_letter.jpeg';
+import AboutImg from '@/assets/images/about_img.jpg';
 
 export {
     RMA_brand_car,
@@ -38,8 +43,14 @@ export {
     RMA_brand_van,
     ServiceImg,
     ContactUsImg,
+    ROALetterImg,
     Coida,
+    BlankPageCard,
+    AboutImg,
+    FNBInteriorImg,
     ROA_brand_pen,
+    LandingBubbleImg,
+    LandingSpiralImg,
     GetStartedImg,
     LandingImg,
     SecondLandingImg,

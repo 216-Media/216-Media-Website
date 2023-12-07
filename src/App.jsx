@@ -47,6 +47,8 @@ import Health from '@/ui/pages/216Health/Health';
 
 import ServicesPage from "@/ui/pages/Services/ServicesPage";
 import ScrollTop from "./common/helpers/HOC/ScrollTop";
+import GetStarted from "./common/components/GetStarted";
+import AboutPage from "./ui/pages/About/AboutPage";
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -63,10 +65,11 @@ function App() {
                 <NavigationBar theming={theme} setTheme={setTheme} />
                 <Hero />
                 <AboutUs />
-                <Services />
-                <Work />
+                {/* <Services /> */}
+                <Work /> 
                 <Team />
                 <Sponsors />
+                
                 <Footer />
               </Box>
             }
@@ -75,6 +78,11 @@ function App() {
           <Route 
             path='/services'
             element={<ServicesPage />}
+          />
+
+          <Route 
+            path='/about-us'
+            element={<AboutPage />}
           />
 
           <Route 
