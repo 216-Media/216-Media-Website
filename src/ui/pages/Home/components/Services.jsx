@@ -119,7 +119,6 @@ function Services(){
                     </Box>
                     
                 </ServiceContainer>
-            
             </ServiceBackgroundBox>
             
         </Fragment>

@@ -30,7 +30,7 @@ const TeamContainer = styled(Container)(({ theme }) => ({
 }))
 
 const Title = styled(Typography)(({ theme }) =>({
-    color: theme.palette.mode === 'light' ? `${Colors.AZTEC}` : `${Colors.White}`,
+    color: Colors.AZTEC,
     fontWeight: 'bold',
     fontSize: '26px',
     marginRight: '2px',

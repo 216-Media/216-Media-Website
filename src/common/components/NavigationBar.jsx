@@ -37,19 +37,14 @@ import
   healthImg
 from '@/assets/icons/216-health.png';
 
-import 
-  CustomIOSwitch 
-from '@/common/components/Switcher';
-
-import 
-  LogoWhite
-from '@/assets/icons/216-logo-white.png'
-
 
 import { 
   Colors,
-  EventType, NavBarItems 
+  EventType, 
+  NavBarItems,
+  ListItems
 } from '@/common/constants';
+
 
 import 
   CloseIcon 
@@ -109,10 +104,7 @@ const ParentLink = styled(Link)({
   color: Colors.AZTEC
 })
 
-function NavigationBar({
-  setTheme,
-  theming
-}) {
+function NavigationBar() {
 
   const NavbarBox = styled(Box)(({ theme }) => ({
     position: 'fixed',
@@ -228,51 +220,20 @@ function NavigationBar({
       </CloseBox>
 
       <List component='nav'>
-          <Fragment>
-            <Divider />
-            <ParentLink to='/'>
-              <ListItem button>
-                <ListItemText primary={'HOME'}/>
-              </ListItem>
-            </ParentLink>
-            
-          </Fragment>
-
-          <Fragment>
-            <Divider />
-            <ParentLink to='/services'>
-              <ListItem button>
-              <ListItemText primary={'SERVICES'}/>
-              </ListItem>
-            </ParentLink>
-          </Fragment>
-
-          <Fragment>
-            <Divider />
-            <ParentLink to='/work'>
-              <ListItem button>
-                <ListItemText primary={'WORK'}/>
-              </ListItem>
-            </ParentLink>  
-          </Fragment>
-
-          <Fragment>
-            <Divider />
-            <ParentLink to='/about-us'>
-              <ListItem button>
-                <ListItemText primary={'ABOUT US'}/>
-              </ListItem>
-            </ParentLink>  
-          </Fragment>
-
-          <Fragment>
-            <Divider />
-            <ParentLink to='/contact-us'>
-              <ListItem button>
-                <ListItemText primary={'CONTACT US'}/>
-              </ListItem>
-            </ParentLink>
-          </Fragment>
+          {
+            ListItems.map((list) => (
+              <Fragment
+                key={list.id}
+              >
+                <Divider />
+                  <ParentLink to={list.link}>
+                    <ListItem button>
+                      <ListItemText primary={list.linkText}/>
+                    </ListItem>
+                  </ParentLink>
+              </Fragment>
+            ))
+          }
        
         <ActionBox>
           <NavbarLink to='/216-health'>216 HEALTH</NavbarLink>
@@ -282,13 +243,6 @@ function NavigationBar({
     </Box>
   )
   
-
-  
-  const handleThemeChange = () => {
-    setTheme(
-      !theming
-    )
-  }
 
   return (
     <NavbarBox>
@@ -307,11 +261,10 @@ function NavigationBar({
       
       <NavbarLeftBox>
         <NavbarLinkBox>
-          <NavbarLink to='/'>HOME</NavbarLink>
-          <NavbarLink to='/about-us'>ABOUT US</NavbarLink>
-          <NavbarLink to='/services'>SERVICES</NavbarLink>
-          <NavbarLink to='/work'>WORK</NavbarLink>
-          <NavbarLink to='/contact-us'>CONTACT US</NavbarLink>
+
+          {ListItems.map((list) => (
+            <NavbarLink to={list.link}>{list.linkText}</NavbarLink>
+          ))}
         </NavbarLinkBox>
         <NavbarLeftBox>
           

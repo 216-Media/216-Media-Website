@@ -25,9 +25,6 @@ import
 from "@/ui/pages/Home/components/AboutUs";
 
 
-
-import Work from "./ui/pages/Home/components/Work";
-
 import Team from "./ui/pages/Home/components/Team";
 
 import Sponsors from "./ui/pages/Home/components/Sponsors";
@@ -47,8 +44,9 @@ import Health from '@/ui/pages/216Health/Health';
 
 import ServicesPage from "@/ui/pages/Services/ServicesPage";
 import ScrollTop from "./common/helpers/HOC/ScrollTop";
-import GetStarted from "./common/components/GetStarted";
+
 import AboutPage from "./ui/pages/About/AboutPage";
+import ScrollToTopButton from "./common/components/ScrollToTopButton";
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -57,19 +55,18 @@ function App() {
     <ThemeProvider theme={theme}>
       <Router>
         <ScrollTop />
+        <ScrollToTopButton />
         <Routes>
           <Route
             path="/"
             element={
               <Box>
-                <NavigationBar theming={theme} setTheme={setTheme} />
+                <NavigationBar />
                 <Hero />
                 <AboutUs />
                 <Services /> 
-                { /* <Work /> */} 
                 <Team />
                 <Sponsors />
-                
                 <Footer />
               </Box>
             }

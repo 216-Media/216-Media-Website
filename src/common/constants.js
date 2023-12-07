@@ -140,7 +140,6 @@ export const aboutQuickLink = [
         link: '/work',
         title: 'Work'
     }
-    
 
 ]
 
@@ -181,6 +180,34 @@ export const ArrowDownAnimation = keyframes`
     transform: translateY(100px); 
   }
 `;
+
+export const ListItems = [
+    {
+        id: 1,
+        linkText: 'HOME',
+        link: '/'
+    },
+    {
+        id: 2,
+        linkText: 'ABOUT US',
+        link: '/about-us'
+    },
+    {
+        id: 3,
+        linkText: 'SERVICES',
+        link:'/services'
+    },
+    {
+        id: 4,
+        linkText: 'WORK',
+        link: '/work'
+    },
+    {
+        id: 5,
+        linkText: 'CONTACT US',
+        link: '/contact-us'
+    }
+]
 
 
 export const TeamMemberDetails = [
