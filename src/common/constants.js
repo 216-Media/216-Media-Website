@@ -15,6 +15,20 @@ import {
     getRandomPattern
 } from '@/common/helpers/randomizePatterns';
 
+import Great from '@/assets/icons/great.png'
+
+import TeamCollab from '@/assets/icons/team-collbab.png';
+
+import Handshake from '@/assets/icons/handshake.png';
+
+import StartUp from '@/assets/icons/start-up.png';
+
+import SmallBusiness from '@/assets/icons/small-business.png';
+
+import Enterprise from '@/assets/icons/enterprise.png';
+
+import Entrepreneur from '@/assets/icons/entrepreneur.png'
+
 
 
 export const Colors = {
@@ -65,6 +79,57 @@ export const TeamItems = [
     'THINKERS',
     'DOERS'
 ];
+
+
+export const values = [
+    { 
+        id: 1, 
+        title: 'We provide great product designs', 
+        icon: Great, 
+        description: 'We are committed to providing flexible, reliable, and elegant products tou our clients ' 
+    },
+    { 
+        id: 2, 
+        title:'We are friendly, resourceful professionals' , 
+        icon:  TeamCollab, 
+        description: 'We’re a high-caliber team of friendly and resourceful professionals committed to work together to produce the best'
+    },
+    { 
+        id: 3, 
+        title: 'We go above and beyond for our clients', 
+        icon: Handshake, 
+        description: 'We are committed to going above and beyond for our clients' 
+    }
+];
+
+export const industries = [
+    {
+        id: 1,
+        title: 'Start-ups',
+        icon: StartUp,
+        description: 'Starting out? Build systematic, streamlined operations from the start, across conception, planning.'
+    },
+
+    {
+        id: 2,
+        title: "SME's",
+        icon: SmallBusiness,
+        description: 'we understand the vital role that Small and Medium-sized Enterprises (SMEs) play in driving innovation, growth, and economic development.'
+    },
+    {
+        id: 3,
+        title: 'Enterprise',
+        icon: Enterprise,
+        description: "we recognize the complexities and challenges that Enterprises face in today's competitive landscape. Our tailored solutions are designed to meet the diverse needs of large-scale businesses, corporations, and organizations"
+    },
+
+    {
+        id: 4,
+        title: 'Sole Partner',
+        icon: Entrepreneur,
+        description: ' Our mission is to empower entrepreneurs by offering comprehensive resources, expert guidance, and a suite of services tailored to fuel their success'
+    }
+]
 
 export const aboutQuickLink = [
     {

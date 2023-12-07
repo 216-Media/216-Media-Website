@@ -5,7 +5,6 @@ import {
 import {
     styled,
     Box,
-    Container,
     Grid,
     Typography
 } from '@mui/material';
@@ -55,7 +54,6 @@ function Values(){
     const ValueTitle = styled(Typography)({
         fontSize: '20px',
         color: Colors.AZTEC,
-
     })
 
     const ValueDescription = styled(Typography)(({ theme }) => ({
@@ -70,7 +68,6 @@ function Values(){
              container
              spacing={3}
              justifyContent={'center'}
-
             >
                 {values.map((value) => (
                     <Grid
@@ -82,7 +79,6 @@ function Values(){
                     >
                         <ValueCard>
                             <ValueIcon src={value.icon}/>
-
                             <ValueTitle
                                 fontWeight={'bold'}
                             >{value.title}</ValueTitle>
@@ -93,7 +89,6 @@ function Values(){
             </Grid>
         </ValueCardContainer>
     )
-
 }
 
 export default Values;

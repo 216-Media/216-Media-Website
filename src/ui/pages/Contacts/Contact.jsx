@@ -132,7 +132,6 @@ function Contact() {
           right team member gets back to you.
         </ContactFormDescription>
 
-
         <ContactInfo>
           <ContactForm />
           <GoogleMapApi />

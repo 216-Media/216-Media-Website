@@ -2,15 +2,11 @@ import {
     styled,
     Box,
     Typography,
+    Container
 } from '@mui/material';
 
-import
-    ServicePatternImg
-from '@/assets/icons/service-patterns.png';
-
 import { 
-    ArrowRightAnimation,
-    Colors 
+    Colors, industries 
 } from '@/common/constants';
 
 import 
@@ -21,10 +17,6 @@ import {
     Fragment 
 } from 'react';
 
-import 
-    Typewriter 
-from 'typewriter-effect';
-
 import {
     Link
 } from 'react-router-dom';
@@ -34,85 +26,102 @@ import
 from '@mui/icons-material/ArrowOutward';
 
 import 
-    EastIcon 
-from '@mui/icons-material/East';
+    DownArrowAnimation 
+from '@/common/components/DownArrowAnimation';
+
+import 
+    CardValues 
+from '@/common/components/CardValue';
+
+import {
+    HelpImg
+} from '@/assets/images'
 
 
-const ServiceContainer = styled(Box)(({ theme }) => ({
-    backgroundImage: `url(${ServicePatternImg})`,
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center',
-    width: '100%',
-    padding: theme.spacing(30, 0, 8, 0),
-    margin: '0 auto',
+
+const ServiceContainer = styled(Container)(({ theme }) => ({
+    display: 'flex',
+    textAlign: 'left',
+    alignItems: 'left',
+    position: 'relative',
+    paddingTop: theme.spacing(6),
+    marginBottom: theme.spacing(3),
+    [theme.breakpoints.down('sm')]: {
+        textAlign: 'center',
+        alignItems: 'center'
+    }
 }))
 
-const TitleContainer = styled(Box)(({ theme }) => ({
+const ServiceTitleContainer = styled(Box)(({ theme }) => ({
     display: 'flex',
-    justifyContent: 'center',
-    flexDirection: 'column',
     alignItems: 'center',
     
 }))
-const Title = styled(Typography)(({ theme }) => ({
+const ServiceTitle = styled(Typography)(({ theme }) => ({
     color: theme.palette.mode === 'light' ? `${Colors.AZTEC}` : `${Colors.White}`,
     fontSize: '26px',
     fontWeight: 'bold',
     marginBlock: theme.spacing(3)
 }))
 
-const TypeWriterComponent = styled(Typography)(({ theme }) => ({
-    marginBottom: theme.spacing(3),
-    fontWeight: '500',
-    fontSize: '20px',
-    color: theme.palette.mode === 'light' ? `${Colors.AZTEC}` : `${Colors.White}`,
+
+const ServiceDescription = styled(Typography)(({ theme }) => ({
+    color: Colors.AZTEC,
+    fontWeight: '400',
+    fontSize: '17px',
+    maxWidth: '620px',
+    margin: theme.spacing(4, 0)
 }))
 
-const NavigateButtonLink = styled(Link)({
-    textDecoration: 'none'
+const ServiceBackgroundBox = styled(Box)(({ theme }) => ({
+    backgroundColor: Colors.SkyBlue,
+    padding: theme.spacing(3)
+}))
+
+const AssistImg = styled('img')({
+    width: '25%',
+    position: 'absolute',
+    right: 0
 })
-
 function Services(){
-
     return(
         <Fragment>
-            <ServiceContainer>
-                <TitleContainer>
-                    <Title>
-                        The great services we offer are
-                    </Title>
-                <TypeWriterComponent>
-                    <Typewriter 
-                        options={{ 
-                            strings: [
-                                'Advertising', 
-                                'Design',
-                                'Digital Marketing',
-                                'Branding',
-                                'Trend Insight Strategy'
-                            ],
-                            autoStart: true,
-                            loop: true
-                        }}
-                    />
-                </TypeWriterComponent>
-                
-                <NavigateButtonLink to='/services'>
-                    <CustomButton
-                        textColor={Colors.AZTEC}
-                        borderColor={Colors.AZTEC}
-                        backgroundColor={Colors.White}
-                        arrowDirection={<ArrowOutwardIcon />} 
-                        buttonText={
-                        'LEARN MORE'
-                        }
-                        
-                />
-                </NavigateButtonLink>
-                
-                </TitleContainer>
-            </ServiceContainer>
+            <ServiceBackgroundBox>
+                <ServiceContainer>
+                    <Box>
+                        <ServiceTitleContainer>
+                            <ServiceTitle>
+                                Who we help.
+                            </ServiceTitle>
+                            <DownArrowAnimation />
+                        </ServiceTitleContainer>
+                        <ServiceDescription>
+                            Our commitment extends beyond our products or services it's about making a meaningful
+                            impact on the lives of those we serve. We dedicate ourselves to supporting 
+                            a diverse range of individuals and organizations
+                        </ServiceDescription>
+
+
+                        <Link
+                            style={{
+                                textDecoration: 'none' 
+                            }}
+                            to='/services'
+                        >
+                            <CustomButton 
+                                arrowDirection={<ArrowOutwardIcon />} 
+                                buttonText={'VIEW SERVICES'}
+                                textColor={Colors.AZTEC}
+                                borderColor={Colors.AZTEC}
+                                backgroundColor={Colors.White}
+                            />
+                        </Link>
+                    </Box>
+                    
+                </ServiceContainer>
+            
+            </ServiceBackgroundBox>
+            
         </Fragment>
     )
 };

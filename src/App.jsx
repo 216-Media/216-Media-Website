@@ -65,8 +65,8 @@ function App() {
                 <NavigationBar theming={theme} setTheme={setTheme} />
                 <Hero />
                 <AboutUs />
-                {/* <Services /> */}
-                <Work /> 
+                <Services /> 
+                { /* <Work /> */} 
                 <Team />
                 <Sponsors />
                 

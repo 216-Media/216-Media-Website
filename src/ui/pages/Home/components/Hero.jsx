@@ -87,7 +87,6 @@ function Hero(){
                         Pan-African creative and 
                         communications agency
                     </Title>
-
                     <ScrollTrigger />
                 </Box>
             </HeroContainer>

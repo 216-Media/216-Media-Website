@@ -308,9 +308,9 @@ function NavigationBar({
       <NavbarLeftBox>
         <NavbarLinkBox>
           <NavbarLink to='/'>HOME</NavbarLink>
+          <NavbarLink to='/about-us'>ABOUT US</NavbarLink>
           <NavbarLink to='/services'>SERVICES</NavbarLink>
           <NavbarLink to='/work'>WORK</NavbarLink>
-          <NavbarLink to='/about-us'>ABOUT US</NavbarLink>
           <NavbarLink to='/contact-us'>CONTACT US</NavbarLink>
         </NavbarLinkBox>
         <NavbarLeftBox>

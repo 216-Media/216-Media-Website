@@ -36,6 +36,7 @@ import FNBInteriorImg from '@/assets/images/FNB_interior.png';
 import BlankPageCard from '@/assets/images/Blank_page_cards.jpeg';
 import ROALetterImg from '@/assets/images/ROA_letter.jpeg';
 import AboutImg from '@/assets/images/about_img.jpg';
+import HelpImg from '@/assets/images/help_img.jpg'
 
 export {
     RMA_brand_car,
@@ -51,6 +52,7 @@ export {
     ROA_brand_pen,
     LandingBubbleImg,
     LandingSpiralImg,
+    HelpImg,
     GetStartedImg,
     LandingImg,
     SecondLandingImg,

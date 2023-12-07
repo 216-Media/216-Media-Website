@@ -134,11 +134,28 @@ function AboutPage() {
           Bankers and Retailers
         
         </AboutInfoDescription>
+        
         <AboutInfoDescription>
           We are led by research, strategy and insight to help us produce
           products and experiences that people love, enduring purpose-led brands and innovative new business. All
           of our work is collaborative and together, we can solve critical challenges and capture valuable opportunities.
         
+        </AboutInfoDescription>
+
+        <AboutInfoTitle 
+         variant='h1'
+         fontWeight={'bold'}
+        > 
+          What's In The Name
+        </AboutInfoTitle>
+
+        <AboutInfoDescription>
+          20 37" North 160 06" East. The approximate geographic center of Africa.
+        </AboutInfoDescription>
+
+        <AboutInfoDescription>
+          The center is also the point of Intersection. We embrace the energy that is created at intersections of
+          diverse peoples, culture, design and technology.
         </AboutInfoDescription>
       </AboutInfoContainer>
 

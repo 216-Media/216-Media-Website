@@ -7,7 +7,8 @@ import {
 
 import {
     ArrowRightAnimation,
-    Colors
+    Colors,
+    values
 } from '@/common/constants';
 
 import{
@@ -26,7 +27,10 @@ from '@mui/icons-material/ArrowOutward';
 import 
     DownArrowAnimation 
 from '@/common/components/DownArrowAnimation';
+
 import Values from './Values';
+
+import CardValues from '@/common/components/CardValue';
 
 
 
@@ -44,7 +48,7 @@ const AboutContainer = styled(Container)(({ theme }) => ({
 }));
 
 const Title = styled(Typography)(({ theme }) => ({
-    color: theme.palette.mode === 'light' ? `${Colors.AZTEC}` : `${Colors.White}`,
+    color: Colors.AZTEC,
     fontWeight: '800',
     fontSize: '26px',
     marginRight: '2px'
@@ -67,7 +71,7 @@ function AboutUs(){
     return(
         <AboutContainer>
             <TitleContainer>
-                <Title>Who we are</Title>
+                <Title>Who we are.</Title>
                 <DownArrowAnimation />
             </TitleContainer>
             <Description>
@@ -77,10 +81,14 @@ function AboutUs(){
             </Description>
 
 
-            <Values />
+            <CardValues
+                values={values}
+            />
 
             <Link
-                style={{ textDecoration: 'none' }}
+                style={{ 
+                    textDecoration: 'none' 
+                }}
                 to='/about-us'
             >
                 <CustomButton 
