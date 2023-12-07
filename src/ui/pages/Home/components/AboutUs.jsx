@@ -10,6 +10,10 @@ import {
     Colors
 } from '@/common/constants';
 
+import{
+    Link
+} from 'react-router-dom'
+
 import 
     CustomButton 
 from '@/common/components/CustomButton';
@@ -75,13 +79,19 @@ function AboutUs(){
 
             <Values />
 
-            <CustomButton 
-             arrowDirection={<ArrowOutwardIcon />} 
-             buttonText={'LEARN MORE'}
-             textColor={Colors.AZTEC}
-             borderColor={Colors.AZTEC}
-             backgroundColor={Colors.White}
-            />
+            <Link
+                style={{ textDecoration: 'none' }}
+                to='/about-us'
+            >
+                <CustomButton 
+                    arrowDirection={<ArrowOutwardIcon />} 
+                    buttonText={'LEARN MORE'}
+                    textColor={Colors.AZTEC}
+                    borderColor={Colors.AZTEC}
+                    backgroundColor={Colors.White}
+                />
+            </Link>
+            
         </AboutContainer>
     )
 }

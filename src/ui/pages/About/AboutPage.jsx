@@ -91,9 +91,10 @@ const AboutInfoTitle = styled(Typography)(({ theme }) => ({
 }))
 
 const AboutInfoDescription = styled(Typography)(({ theme }) => ({
-  fontSize: '20px',
+  fontSize: '18px',
   textAlign: 'center',
-  color: Colors.ScaleGrey
+  color: Colors.ScaleGrey,
+  paddingBottom: theme.spacing(3)
 }))
 function AboutPage() {
   return (
@@ -131,6 +132,12 @@ function AboutPage() {
           achieved early success in the field of Brand Communications, Event Management, Marketing Strategy, and Project
           and Programme Management services. Our early go to market strategy was aimed at providing solutions to clients such as Insurances, 
           Bankers and Retailers
+        
+        </AboutInfoDescription>
+        <AboutInfoDescription>
+          We are led by research, strategy and insight to help us produce
+          products and experiences that people love, enduring purpose-led brands and innovative new business. All
+          of our work is collaborative and together, we can solve critical challenges and capture valuable opportunities.
         
         </AboutInfoDescription>
       </AboutInfoContainer>
