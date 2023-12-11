@@ -4,7 +4,7 @@ export const Environments = {
         uiHost: 'localhost',
         uiBase: '/',
         apiHost: '',
-        assetBase: '' ///we must have an assetBase since 216 has many images
+        assetBase: 'https://216.co.za/assets' ///we must have an assetBase since 216 has many images
     },
 
     Prod: {
@@ -12,7 +12,7 @@ export const Environments = {
         uiHost: '',
         uiBase: '/',
         apiHost: '',
-        assetBase: '' ////https://assetBase.co.za
+        assetBase: 'https://216.co.za/assets' ////https://assetBase.co.za
     }
 };
 

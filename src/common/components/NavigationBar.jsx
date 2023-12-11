@@ -49,6 +49,8 @@ import {
 import 
   CloseIcon 
 from '@mui/icons-material/Close';
+import Environment from '../Environment';
+
 
 
 const CloseBox = styled(Box)(({ theme }) => ({
@@ -237,7 +239,7 @@ function NavigationBar() {
        
         <ActionBox>
           <NavbarLink to='/216-health'>216 HEALTH</NavbarLink>
-          <Logo width={30} src={healthImg} alt='216-health' />
+          <Logo width={30} src={`${Environment.assetBase}/216_health_img-PBAoAdcz.jpg`} alt='216-health' />
         </ActionBox>
       </List>
     </Box>
@@ -253,7 +255,7 @@ function NavigationBar() {
         
           <Logo 
           width={60} 
-          src={LogoImg} 
+          src={`${Environment.assetBase}/216-logo-I0QFPrKC.png`} 
           alt='216-logo' 
           />
         

@@ -58,14 +58,12 @@ function ScrollToTopButton() {
     return (
         <Fragment>
             { isVisible && (
-
                 <ScrollToTopBtn 
                     onClick={scrollToTop}
                     color='secondary'
                     variant='contained'
                     aria-label='Scroll to top'
                 >
-                
                     <KeyboardArrowUpIcon />
                 </ScrollToTopBtn>
             )}
